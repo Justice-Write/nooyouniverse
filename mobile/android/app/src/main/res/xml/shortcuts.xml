@@ -6,7 +6,7 @@
         android:shortcutLongLabel="@string/app_name_site">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.nooyouniverse.observationlog.debug"
+            android:targetPackage="com.nooyouniverse.observationlog"
             android:targetClass="com.nooyouniverse.observationlog.SiteLauncher" />
     </shortcut>
     <shortcut
@@ -15,7 +15,7 @@
         android:shortcutLongLabel="@string/app_name_log">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.nooyouniverse.observationlog.debug"
+            android:targetPackage="com.nooyouniverse.observationlog"
             android:targetClass="com.nooyouniverse.observationlog.LogLauncher" />
     </shortcut>
     <shortcut
@@ -24,7 +24,7 @@
         android:shortcutLongLabel="@string/app_name_hub">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.nooyouniverse.observationlog.debug"
+            android:targetPackage="com.nooyouniverse.observationlog"
             android:targetClass="com.nooyouniverse.observationlog.HubLauncher" />
     </shortcut>
 </shortcuts>
