@@ -4,7 +4,7 @@ Read this file, `docs/MOBILE-ROADMAP.md`, `public/log.html`, and `public/sources
 
 ## What this repository is
 
-`castleism/nooyouniverse` is the **deploy repo** for the static site. Cloudflare Workers serves only `public/`. The long-form site roadmap lives in MyPersonas at `nooyouniverse.com/SITE-ROADMAP.md`.
+`Justice-Write/nooyouniverse` is the **deploy repo** for the static site. Cloudflare Workers serves only `public/`. The long-form site roadmap lives in MyPersonas at `nooyouniverse.com/SITE-ROADMAP.md`.
 
 Cillian O'Sullivan is a fictional, AI-assisted, human-reviewed Castleborn character. Content is educational only. Nothing here is medical advice.
 
@@ -31,7 +31,7 @@ Mission 09 and the homepage waitlist describe an **unbuilt / not-released produc
 - Export/import is versioned JSON (`noo-private-observation-log` v1) and rejects unknown missions and clinical/measurement fields.
 - Edits keep an append-only correction history. Users can wipe all notes on device. A 21+ / not-medical acknowledgment is stored separately from notes.
 - Test fixtures in `mobile/tests/fixtures/` are synthetic. The app starts empty.
-- Existing owner phone-test prototypes are local and are **not** in this cloud checkout. Do not claim access to them. If signing keys differ, use export/import or side-by-side install.
+- Existing owner phone-test prototypes are local and are **not** in this cloud checkout. Do not claim access to them. If package/signing identity differs, preserve the existing install and export; stop for exact device/migration approval. Never uninstall or clear data to bypass a mismatch.
 
 ## Commands
 
@@ -42,12 +42,12 @@ npm run smoke   # headless Chrome, skipped if Chrome/puppeteer-core missing
 npm run serve   # http://127.0.0.1:4173
 ```
 
-Android APK: `docs/BUILD-ANDROID.md` (Gradle when an SDK is present; `mobile/scripts/repack-apk.sh` when it is not). Release key: `_ops/keystores/`, never in git.
+Android APK: `docs/BUILD-ANDROID.md`. Historical Gradle-free repacks are not current release acceptance evidence; source-built exact-artifact verification is required. Signing and physical installation remain held. Release key: `_ops/keystores/`, never in git.
 Desktop / self-host: `docs/DESKTOP.md`, `deploy/docker/`.
-Owner phone sideload + hub: `docs/DEVICE-INSTALL.md`.
-Android Chrome home-screen site: `docs/ANDROID-HOME-SCREEN.md`.
-Phone checklist: `docs/PHONE-CHECKLIST.md`.
-Owner Drive drop (APK + install note): https://drive.google.com/drive/folders/1sAyTL0yxwY8SpEpfpHBnXpR8w0nOAway
+Owner phone sideload + hub (held; historical recipe): `docs/DEVICE-INSTALL.md`.
+Android Chrome home-screen site (device acceptance held): `docs/ANDROID-HOME-SCREEN.md`.
+Phone checklist (not authorization to execute): `docs/PHONE-CHECKLIST.md`.
+Historical owner Drive drops are superseded. Do not fetch, refresh or install them while the hold is active.
 Human review packet (unsigned): `docs/REVIEW-PACKET.md`.
 Store copy drafts — do not submit: `docs/STORE-LISTING-DRAFT.md`.
 Remote sync stays gated: `docs/SYNC-BACKLOG.md`.

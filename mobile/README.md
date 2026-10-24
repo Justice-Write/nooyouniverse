@@ -1,5 +1,7 @@
 # Private observation log
 
+> **Installation hold — 2026-10-24:** historical APK/Drive install directions below are superseded. Do not sign, distribute, install, uninstall or clear an existing profile. See [the current source/user guide](../docs/VISITOR-AND-OPERATOR-GUIDE.md) and obtain exact artifact/device acceptance separately.
+
 On-device notes linked to **approved** Noo YouNiverse missions already in `public/log.html`.
 
 This is a debug prototype. It is not a released product, not a medical record, and not shipped by the Cloudflare Worker (only `public/` is served).

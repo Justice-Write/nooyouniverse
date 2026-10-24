@@ -1,12 +1,16 @@
 # nooyouniverse.com — deploy repo
 
+## Current visitor/operator manual
+
+See [the versioned guide](docs/VISITOR-AND-OPERATOR-GUIDE.md) for current task steps, source/live limits, setup checks and recovery boundaries. This documentation branch is not a deployment.
+
 Static site for Noo YouNiverse (Cillian O'Sullivan, a fictional Castleborn character).
 
 **Source of truth:** `MyPersonas/nooyouniverse.com/` — edit there, copy into `public/` here, push to deploy.
 Docs & roadmap: `MyPersonas/nooyouniverse.com/SITE-ROADMAP.md`.
 Agent handoff: `AGENTS.md`. Mobile milestone roadmap: `docs/MOBILE-ROADMAP.md`. Desktop/self-host: `docs/DESKTOP.md`, `deploy/docker/`. Missions 12–15 art brief: `docs/CLAUDE-DESIGN-BRIEF-missions-12-15.md`.
 
-`mobile/` is a **private debug observation log** plus a check-hub APK that also carries an offline copy of this site. One sideload adds three launcher apps (website copy, observation log, check hub); install `mobile/dist/noo-observation-log-0.2.0-release.apk`. Cloudflare still serves only `public/`. The public Mission Log and waitlist still describe the tracker as not a released product. PWA files in `public/` let Android Chrome add the live site to the home screen after deploy. Owner phone drop: Google Drive folder `Noo YouNiverse — phone check`.
+`mobile/` is a private local observation-log prototype and offline check hub, not a released public tracker. Historical APK/Drive installation directions are superseded: signing, physical installation, distribution and profile migration remain held. Do not fetch or install an old candidate or clear an existing device. Cloudflare serves only public/. See the versioned visitor/operator guide for synthetic local acceptance and backup boundaries.
 
 ## Deploy
 

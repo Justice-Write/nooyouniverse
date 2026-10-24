@@ -1,5 +1,7 @@
 # Owner device install — sideload + home-screen playbook
 
+> **Current hold — 2026-10-24:** this file contains historical build/install evidence or recipes, not permission or current artifact acceptance. Signing, physical installation, distribution and installed-profile movement remain held. Do not install old APK/Drive candidates, uninstall an existing app or clear data. Historical Gradle-free repacks are not current release acceptance. Use [the versioned visitor/operator guide](VISITOR-AND-OPERATOR-GUIDE.md) for source/live distinctions and synthetic backup checks.
+
 This cloud checkout cannot tap your launcher. The APK and install note are in your Google Drive folder so the phone can fetch them: https://drive.google.com/drive/folders/1sAyTL0yxwY8SpEpfpHBnXpR8w0nOAway
 
 **Install this:** `mobile/dist/noo-observation-log-0.2.0-release.apk` (2026-09-26)  

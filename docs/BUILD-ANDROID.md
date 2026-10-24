@@ -1,5 +1,7 @@
 # Build the Android debug APK
 
+> **Current hold — 2026-10-24:** this file contains historical build/install evidence or recipes, not permission or current artifact acceptance. Signing, physical installation, distribution and installed-profile movement remain held. Do not install old APK/Drive candidates, uninstall an existing app or clear data. Historical Gradle-free repacks are not current release acceptance. Use [the versioned visitor/operator guide](VISITOR-AND-OPERATOR-GUIDE.md) for source/live distinctions and synthetic backup checks.
+
 This produces a **sideload debug APK** for **Noo Check Hub**: offline website copy, observation log, and a checklist of live pages. It is not a Play Store artifact. Do not upload it to any store from this recipe.
 
 The app uses a WebView over offline assets. It has no `INTERNET` permission and does not read sensors. Live `https://` taps open Chrome.

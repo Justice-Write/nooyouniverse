@@ -1,5 +1,7 @@
 # iOS path from this Linux checkout
 
+> **Current hold — 2026-10-24:** this file contains historical build/install evidence or recipes, not permission or current artifact acceptance. Signing, physical installation, distribution and installed-profile movement remain held. Do not install old APK/Drive candidates, uninstall an existing app or clear data. Historical Gradle-free repacks are not current release acceptance. Use [the versioned visitor/operator guide](VISITOR-AND-OPERATOR-GUIDE.md) for source/live distinctions and synthetic backup checks.
+
 This environment is Linux. It cannot produce a signed iOS `.ipa` or open Xcode. Store submissions stay later even though the Apple account is verified.
 
 ## What Cursor can ship here

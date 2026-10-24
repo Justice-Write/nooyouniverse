@@ -1,5 +1,7 @@
 # Desktop — install as an app, or self-host
 
+> **Current hold — 2026-10-24:** this file contains historical build/install evidence or recipes, not permission or current artifact acceptance. Signing, physical installation, distribution and installed-profile movement remain held. Do not install old APK/Drive candidates, uninstall an existing app or clear data. Historical Gradle-free repacks are not current release acceptance. Use [the versioned visitor/operator guide](VISITOR-AND-OPERATOR-GUIDE.md) for source/live distinctions and synthetic backup checks.
+
 There is no separate desktop program and none is planned. The public site and
 the private observation log are both web apps; on desktop they install the
 same way they do on a phone, and the site can additionally be self-hosted as a

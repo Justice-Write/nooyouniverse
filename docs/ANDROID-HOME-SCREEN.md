@@ -1,5 +1,7 @@
 # Android — save the live website as a browser app
 
+> **Current hold — 2026-10-24:** this file contains historical build/install evidence or recipes, not permission or current artifact acceptance. Signing, physical installation, distribution and installed-profile movement remain held. Do not install old APK/Drive candidates, uninstall an existing app or clear data. Historical Gradle-free repacks are not current release acceptance. Use [the versioned visitor/operator guide](VISITOR-AND-OPERATOR-GUIDE.md) for source/live distinctions and synthetic backup checks.
+
 This cloud checkout **cannot push an icon onto your phone**. After you open the live site in Chrome, Android can put it on the home screen like an app.
 
 PWA files (`public/manifest.webmanifest`, maskable PNG icons, `public/sw.js`, `public/pwa-register.js`) are in this branch and meet Chrome’s install fields (standalone display, 192/512 any + maskable icons, fetch-handling service worker on every public page). They appear on `https://nooyouniverse.com` only after a human merges and Cloudflare deploys. Production still 404s `/manifest.webmanifest` today. Until then, install **Noo YouNiverse** from the debug APK for the saved website, and Chrome ⋮ → **Add to Home screen** still creates a shortcut to the live site.
