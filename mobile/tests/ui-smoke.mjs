@@ -4,6 +4,8 @@
  * Requires system Chrome. Does not invent missions or sensor data.
  */
 import assert from "node:assert/strict";
+import { mkdtemp, writeFile, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { spawn } from "node:child_process";
 import { createRequire } from "node:module";
 import { dirname, resolve } from "node:path";
@@ -42,6 +44,7 @@ try {
 const port = process.env.NOO_SMOKE_PORT || "18474";
 const url = "http://127.0.0.1:" + port + "/";
 let server;
+let transferDir;
 
 async function serve() {
   await new Promise((resolveServe, reject) => {
@@ -141,6 +144,45 @@ try {
   const err = await page.$eval(".status.err", (el) => el.textContent);
   assert.match(err, /heartRate/);
 
+  // Synthetic web transfer tests; native document-provider acceptance is separate.
+  const observations = JSON.parse(exported).observations;
+  const currentRows = async () => JSON.parse(await page.$eval("#exportBox", el => el.value)).observations;
+  assert.deepEqual(await currentRows(), observations);
+  for (const payload of ["{broken", JSON.stringify({ ...JSON.parse(exported), version: 999 })]) {
+    await page.$eval("#importBox", (el, value) => { el.value = value; }, payload);
+    await page.click("#runImport");
+    assert.ok(await page.$(".status.err"));
+    assert.deepEqual(await currentRows(), observations, "Rejected imports must preserve records");
+  }
+  transferDir = await mkdtemp(resolve(tmpdir(), "noo-synthetic-transfer-"));
+  const fixture = resolve(transferDir, "synthetic-observations.json");
+  await writeFile(fixture, exported);
+  for (let attempt = 0; attempt < 2; attempt++) {
+    await (await page.$("#importFile")).uploadFile(fixture);
+    await page.waitForFunction(value => document.querySelector("#importBox").value === value, {}, exported);
+    assert.deepEqual(await currentRows(), observations, "File selection must not implicitly import");
+    await page.click("#runImport");
+    assert.ok(await page.$(".status.ok"));
+    assert.deepEqual(await currentRows(), observations, "Repeated merge must not duplicate records");
+  }
+  await page.evaluate(() => {
+    globalThis.transferCalls = [];
+    globalThis.NooBridge = { saveText(filename, text) { transferCalls.push({ filename, text }); } };
+  });
+  await page.click("#downloadExport");
+  await page.click("#downloadExport");
+  const calls = await page.evaluate(() => transferCalls);
+  assert.equal(calls.length, 2, "Export can be retried without native completion");
+  for (const call of calls) {
+    assert.match(call.filename, /\.json$/);
+    assert.deepEqual(JSON.parse(call.text).observations, observations);
+  }
+  assert.deepEqual(await currentRows(), observations);
+  await page.reload({ waitUntil: "domcontentloaded" });
+  await page.click("[data-tab='transfer']");
+  assert.deepEqual(await currentRows(), observations, "Transfer records survive reload");
+  console.log("Synthetic transfer passed: file input, duplicate merge, rejection atomicity, bridge payload/retry, reload.");
+
   await page.goto("http://127.0.0.1:" + port + "/hub.html", { waitUntil: "domcontentloaded" });
   const hub = await page.evaluate(() => document.body.innerText);
   assert.match(hub, /Check hub/);
@@ -152,4 +194,5 @@ try {
 } finally {
   await browser.close();
   if (server) server.kill();
+  if (transferDir) await rm(transferDir, { recursive: true, force: true });
 }

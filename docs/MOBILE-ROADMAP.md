@@ -37,6 +37,10 @@ Build, signing, packaging, publication, installation and hands-on acceptance are
 - Empty first run; all shipped fixtures are synthetic.
 - No accounts, remote sync, sensors, diagnosis, dosing or prescription behavior.
 
+## Transfer acceptance preparation
+
+2026-10-30: expanded synthetic browser transfer checks pass. Follow [TRANSFER-ACCEPTANCE.md](TRANSFER-ACCEPTANCE.md) for scheduled native picker/save/cancel/restart checks. No device acceptance or data migration is implied.
+
 ## Data preservation rules
 
 The release package and debug package have separate app-private WebView stores. No automatic migration exists. Never uninstall, clear data or replace a signer to make an update succeed. Compare device, package, signer, version and artifact hash first. Exported JSON contains personal free text and correction history; it is not encrypted and belongs only in an owner-chosen private location.
