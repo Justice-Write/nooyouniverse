@@ -26,7 +26,7 @@ Signposts that point here: `CLAUDE.md` (Claude tools) and the banner at the top 
 
 ## 1. In progress
 
-None. Remaining device/UI and human-review work is listed below.
+None. Off-phone transfer checks complete; native tests require an exclusive scheduled slot.
 
 ## 2. Project
 
@@ -52,6 +52,8 @@ Evidence-literacy educational website plus a separate local observation notebook
 
 ## 5. Next actions
 
+Use docs/TRANSFER-ACCEPTANCE.md for scheduled native transfer acceptance. Synthetic browser checks pass; Android provider completion remains unverified.
+
 1. Preserve both Android packages and their separate data stores; with exclusive phone access, complete native export/import/restart, all three launchers and accessibility checks.
 2. Install and verify the public PWA on desktop if the owner wants a desktop shell; do not describe that as installing the private notebook.
 3. After future canonical public changes, update the MyPersonas mirror through another focused exact-parity change; never copy private `outputs/` material into either public repository.
@@ -68,6 +70,8 @@ Evidence-literacy educational website plus a separate local observation notebook
 From `mobile/`: run `npm ci`, `npm test`, `npm run smoke`, `npm run verify-distribution`, `npm audit --audit-level=high`, source-build Android, then inspect identity, signature, permissions, backup exclusions, alignment and 39/39 assets. Run `python mobile/scripts/verify-live.py` for production byte readback. Build, package, publish, install and hands-on acceptance are separate evidence states.
 
 ## 8. Work log
+
+- 2026-10-30 · Codex: expanded browser smoke with synthetic file-input import, duplicate-merge stability, malformed/unsupported import atomicity, bridge payload/retry and reload checks; all passed. Added docs/TRANSFER-ACCEPTANCE.md with native picker cancellation/save/readback, fixture isolation and receipt requirements. No phone operations or runtime/package changes. Separate release installation is not a declared canonical production-lineage decision or debug migration.
 
 - 2026-10-30 09:15 UTC · Codex GPT-6: completed the fresh cross-chat/repository/live/package/device/data reconciliation. Reverified 29/29 live files, headers, published ZIP/APK hashes/signature and byte-identical installed APK without reading phone data. Fresh source checks: 31/31 tests, smoke, 30-file distribution boundary, audit 0, Android debug/release builds and release lint 0 errors/13 warnings, 39/39 assets. Replaced stale 0.2.2/installation-hold documentation with current 0.2.3 truth; added the project/data stocktake and environment/key ignore patterns; generalized public device/owner metadata. MyPersonas PR #30 merged the exact 30-file public mirror and PR #31 added equivalent environment/signing-file protections; all required checks passed. GitHub description retained and homepage set. No new website payload, APK, health claim, mission, provider row or personal record changed; no store/iOS/sync/community/newsletter/commerce action.
 
