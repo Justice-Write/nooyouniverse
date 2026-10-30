@@ -22,7 +22,7 @@ Repository, live-site, release-asset and device readback evidence supersedes old
 | Website/PWA | `main` at `73035f0`; 29/29 public files match live; core security headers present | HTTP/apex redirects and HSTS |
 | Android release | 0.2.3/code 5 prerelease packaged; exact signed APK installed and read back from the Android 13 owner test phone | Full launcher, native export/import, restart and accessibility sequence |
 | Android debug | Separate 0.2.2-debug/code 4 install preserved | No migration to release app; none implied |
-| Desktop | Website works in browser | No installed Noo desktop PWA was found |
+| Desktop | Edge installation and standalone launch evidenced; independent StartApps registration readback | Physical offline/accessibility acceptance pending; no notebook migration |
 | Missions | 01–11 public; 12–15 absent | Mission 11 disposition/review record; all held content approvals |
 | Waitlist | Public form exists; server data is not installer data | Provider/account and subscriber operations remain separate |
 

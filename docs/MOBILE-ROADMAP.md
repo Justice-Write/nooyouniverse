@@ -16,7 +16,7 @@ This roadmap covers the private, local-first observation notebook and the public
 | Distribution | GitHub test prerelease `v0.2.3-candidate-20261029`; ZIP SHA-256 `f46b99ebe616c7011a4640e4d7a8a4fd3d47ffaac4270903a0af33e8d5f74883` |
 | Installation | Exact signed APK installed on the Android 13 owner test phone and pulled back byte-identical |
 | Existing debug app | 0.2.2-debug/code 4 remains separate and unchanged; no data migration |
-| Desktop PWA | Public PWA live and browser-usable; no installed Noo desktop shortcut found |
+| Desktop PWA | Installed in Edge; standalone launch receipt and independent StartApps registration verified; offline/accessibility pending |
 | Store/iOS | No store submission; no private-notebook iOS build or distribution path |
 
 Build, signing, packaging, publication, installation and hands-on acceptance are separate states. Installation is complete; full device acceptance is not.
@@ -54,7 +54,7 @@ The public-site PWA and private notebook are different products. Installing the 
 3. Create synthetic data only, export it through the native picker, import it, restart/force-stop, and verify persistence/corrections.
 4. Run TalkBack/large-text/keyboard-target and core touch-flow checks; record device screenshots that contain no personal notes.
 5. Verify long-session/background/resume behavior.
-6. Install and test the public PWA on desktop separately if desired; verify offline behavior and uninstallability without implying notebook installation.
+6. Complete scheduled offline/accessibility acceptance of the installed desktop public PWA without implying notebook installation or migration.
 
 Do not read or copy existing owner notes to perform these checks. Preserve both installed packages and their timestamps/data.
 

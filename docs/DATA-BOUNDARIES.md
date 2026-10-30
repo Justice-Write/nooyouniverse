@@ -30,3 +30,7 @@ Release inspection compares packaged assets with generated source assets and che
 ## Inventory coverage
 
 The October 29 audit searched relevant worktrees and filenames under Documents, Downloads and Desktop, checked the private workspace/recovery records and enumerated storage roots. It did not export browser databases, note contents or waitlist rows. Name-based search cannot rule out generically named copies on other disks. No personal files were deleted or relocated.
+
+## Installed desktop public PWA
+
+2026-10-30 receipt: Edge public-site PWA installed and standalone launch recorded; independent StartApps registration confirmed. Its browser-profile/site storage is separate from both Android package stores. Installation does not copy private observations, exports, research, credentials or signing keys, and does not implement debug-to-release migration. Browser profile data and raw installation receipts stay outside source/install packages. Offline/accessibility acceptance remains pending.
