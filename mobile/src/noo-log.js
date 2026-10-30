@@ -110,7 +110,7 @@
 
   function snapshotNote(row) {
     return {
-      recordedAt: trim(row.updatedAt) || trim(row.createdAt) || nowIso(),
+      recordedAt: trim(row.recordedAt) || trim(row.updatedAt) || trim(row.createdAt) || nowIso(),
       missionId: trim(row.missionId),
       observedAt: trim(row.observedAt),
       variable: trim(row.variable),

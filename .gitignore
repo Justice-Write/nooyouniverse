@@ -13,3 +13,8 @@ local.properties
 *.jks
 *.keystore
 *.keystore.properties
+mobile/dist/installed-reference/
+mobile/dist/*0.2.1*.apk
+mobile/dist/*0.2.1*.idsig
+mobile/dist/candidates/*.apk
+mobile/dist/candidates/*.idsig

@@ -2,7 +2,7 @@
 
 On-device notes linked to **approved** Noo YouNiverse missions already in `public/log.html`.
 
-This is a debug prototype. It is not a released product, not a medical record, and not shipped by the Cloudflare Worker (only `public/` is served).
+This is a local prototype. It is not a released product, not a medical record, and not shipped by the Cloudflare Worker (only `public/` is served).
 
 ## Run
 
@@ -14,8 +14,15 @@ npm run serve
 
 Open `http://127.0.0.1:4173`. First launch asks for a 21+ / not-medical acknowledgment. The log itself starts with **zero** observations. JSON under `tests/fixtures/` is synthetic test data only.
 
-iPhone: `docs/IOS-HOME-SCREEN.md` (home-screen PWA; this Linux checkout cannot sign an IPA).
-Android: `docs/BUILD-ANDROID.md`. Check hub + offline site copy: open `hub.html` or sideload the APK (`docs/DEVICE-INSTALL.md`). Live site on the home screen: `docs/ANDROID-HOME-SCREEN.md`.
+iPhone: only the **public-site** PWA is live, and physical installation remains
+held. The private observation log has no iOS distribution path; a native build
+would require a separately authorized Mac/Xcode/signing workflow
+(`docs/IOS-HOME-SCREEN.md`).
+Android source/build verification: `docs/BUILD-ANDROID.md`. Preview the check
+hub and offline site copy locally through `npm run serve`. The portfolio
+installation hold remains active: do not sideload, uninstall, update, or
+install the browser PWA until the owner releases the hold for an exact verified
+artifact/action (`docs/DEVICE-INSTALL.md`, `docs/ANDROID-HOME-SCREEN.md`).
 
 ## Rules baked into the store
 

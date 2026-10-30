@@ -17,10 +17,16 @@ test("check hub lists the website copy, observation log, and live pages", () => 
   assert.match(hub, /https:\/\/nooyouniverse\.com\/corrections/);
   assert.match(hub, /#waitlist/);
   assert.match(hub, /castleborn\.cillian/);
+  assert.match(hub, /Local check hub/);
+  assert.match(hub, /The PWA files are live/);
+  assert.match(hub, /never uninstall to bypass a signing mismatch/);
+  assert.match(hub, /declares three launcher entries/);
+  assert.match(hub, /Physical launcher behavior has not been accepted/);
+  assert.doesNotMatch(hub, /Debug hub|sideload this APK|Until then|After the PWA files/i);
   assert.doesNotMatch(hub, /heartRate|dose|diagnosis/);
 });
 
-test("Android install exposes three launcher apps: hub, website copy, observation log", () => {
+test("Android manifest declares three launcher entries: hub, website copy, observation log", () => {
   const manifest = readFileSync(
     resolve(root, "mobile/android/app/src/main/AndroidManifest.xml"),
     "utf8"
@@ -33,6 +39,17 @@ test("Android install exposes three launcher apps: hub, website copy, observatio
   assert.match(manifest, /app_name_log/);
   const aliases = manifest.match(/<activity-alias\b/g) || [];
   assert.equal(aliases.length, 3);
+});
+
+test("observation-log copy stays variant-neutral and data-preserving", () => {
+  const [index, app] = [
+    readFileSync(resolve(root, "mobile/web/index.html"), "utf8"),
+    readFileSync(resolve(root, "mobile/web/app.js"), "utf8"),
+  ];
+  assert.match(index, /Local prototype/);
+  assert.doesNotMatch(index, /Debug prototype/i);
+  assert.match(app, /different package or signing identity/);
+  assert.doesNotMatch(app, /different debug key/i);
 });
 
 test("offline site bundle rewrites clean URLs and stays non-clinical", () => {

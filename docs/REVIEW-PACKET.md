@@ -1,6 +1,11 @@
-# Review packet — private observation log (debug)
+> Current release status: see [RELEASE-2026-10-29.md](RELEASE-2026-10-29.md). Earlier hold and branch statements below are historical; rejected old APKs remain rejected.
 
-**Status:** prepared for named humans. **Not signed.** Cursor is not a privacy officer, lawyer, or clinician. The site roadmap still has **no named human health-claim approver**. This packet exists so those reviews can happen; it does not replace them.
+# Review packet — private observation-log prototype
+
+**Status:** prepared for named humans. **Not signed.** Models and coding agents
+are not privacy officers, lawyers or clinicians. The site roadmap still has
+**no named human health-claim approver**. This packet exists so those reviews
+can happen; it does not replace them.
 
 **Do not** change the public waitlist or Mission 09 to claim a released product until this packet is actually reviewed.
 
@@ -8,8 +13,8 @@
 
 | Track | Question for the named reviewer | App fact (verify in source) |
 |---|---|---|
-| Product | Is an on-device debug log allowed to exist without being called a released product? | `mobile/` is unpublished to stores; `public/index.html` waitlist still says the tracker is not built as a product |
-| Privacy | What personal data is stored, where, and who can read it? | Observations + 21+ ack in WebView `localStorage`. Android `allowBackup=false`. No `INTERNET` permission. No analytics. Export is user-initiated JSON |
+| Product | Is an on-device local log allowed to exist without being called a released product? | `mobile/` is unpublished to stores; `public/index.html` waitlist still says the tracker is not built as a product |
+| Privacy | What personal data is stored, where, and who can read it? | Observations + 21+ ack in WebView `localStorage`. Android disables general backup and uses explicit cloud-backup/device-transfer exclusion rules for the private WebView data. No `INTERNET` permission. No analytics. Export is user-initiated JSON |
 | Security | Are there sensors, accounts, or unexpected IPC? | No sensors. Debug-only `noo_debug_cmd` seed/dump intents when `BuildConfig.DEBUG`. File export/import via Storage Access Framework |
 | Legal / FTC / labeling | Does UI copy look like a health claim, treatment, or “clinically proven” tool? | Banner, gate, and export envelope say observations ≠ measurements; educational only; Cillian is fictional |
 | Health / safety | Could a reasonable person use this as a medical record or dosing log? | Schema **rejects** vitals, doses, diagnoses, sensors. Null results are first-class. Uncertainty is user-stated, not computed |
@@ -36,6 +41,17 @@
 - Public-site copy that claims store availability or FDA status
 
 ## Sign-off block (humans only)
+
+Every decision must bind to one exact review subject. A signature without these
+fields does not approve a later commit or artifact.
+
+| Exact subject | Value |
+|---|---|
+| Source commit | |
+| App version / versionCode | |
+| Artifact type (source / unsigned APK / signed APK) | |
+| Artifact full SHA-256 | |
+| Review-packet revision / full SHA-256 | |
 
 | Role | Name | Date | Decision | Notes |
 |---|---|---|---|---|

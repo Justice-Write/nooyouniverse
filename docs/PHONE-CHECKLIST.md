@@ -1,8 +1,16 @@
+> Current release status: see [RELEASE-2026-10-29.md](RELEASE-2026-10-29.md). Earlier hold and branch statements below are historical; rejected old APKs remain rejected.
+
 # Phone checklist — websites and apps to look at
 
-Use this with the three launcher icons from the debug APK. Fetch the APK from Drive: https://drive.google.com/drive/folders/1sAyTL0yxwY8SpEpfpHBnXpR8w0nOAway
+> **Frozen 2026-10-23:** do not fetch or install an APK from Drive. The old
+> signed/debug artifacts are superseded, no corrected signed candidate exists,
+> and the portfolio installation hold is active. Use this checklist only after
+> the owner releases that hold for one exact post-sign-verified hash.
 
-## On this device (APK)
+The accepted future Android candidate is intended to expose three launcher
+entries. The live Chrome PWA is a separate fourth icon if installed.
+
+## On this device (future accepted APK)
 
 - [ ] Three launcher icons: Noo YouNiverse, Noo Observation Log, Noo Check Hub
 - [ ] Check hub opens
@@ -32,4 +40,4 @@ Use this with the three launcher icons from the debug APK. Fetch the APK from Dr
 - Instagram / Facebook / X until those accounts are used on purpose
 - Play / App Store listings (drafts only: `docs/STORE-LISTING-DRAFT.md`)
 - Remote sync (`docs/SYNC-BACKLOG.md`)
-- Mission 12 (draft PR, not catalog canon)
+- Missions 12–15 (private drafts/art candidates, not catalog canon)

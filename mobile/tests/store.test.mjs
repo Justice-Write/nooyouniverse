@@ -138,6 +138,36 @@ test("export envelope labels the file as observations, not measurements", () => 
   assert.equal(doc.observations[0].kind, "observation");
 });
 
+test("separate-app migration preserves corrections and repeat merge is idempotent", () => {
+  const oldApp = NooLog.createStore(catalog, NooLog.memoryAdapter(""));
+  const entry = oldApp.create(draft());
+  assert.equal(entry.ok, true);
+  assert.equal(oldApp.update(entry.value.id, { outcome: 'Corrected migration fixture.' }).ok, true);
+  const backup = oldApp.exportDocument();
+  assert.equal(backup.ok, true);
+  const newApp = NooLog.createStore(catalog, NooLog.memoryAdapter(""));
+  assert.equal(newApp.importDocument(backup.value, 'merge').ok, true);
+  assert.deepEqual(newApp.list(), oldApp.list());
+  assert.equal(newApp.importDocument(backup.value, 'merge').ok, true);
+  assert.deepEqual(newApp.list(), oldApp.list());
+  assert.equal(oldApp.list().length, 1, 'migration must leave the old app intact');
+});
+
+test("import preserves an existing correction timestamp exactly", () => {
+  const source = NooLog.createStore(catalog, NooLog.memoryAdapter(""));
+  const entry = source.create(draft());
+  assert.equal(entry.ok, true);
+  assert.equal(source.update(entry.value.id, { outcome: "Timestamp preservation fixture." }).ok, true);
+  const backup = source.exportDocument();
+  assert.equal(backup.ok, true);
+  const stableRecordedAt = "2026-01-02T03:04:05.000Z";
+  backup.value.observations[0].corrections[0].recordedAt = stableRecordedAt;
+
+  const target = NooLog.createStore(catalog, NooLog.memoryAdapter(""));
+  assert.equal(target.importDocument(backup.value, "merge").ok, true);
+  assert.equal(target.list()[0].corrections[0].recordedAt, stableRecordedAt);
+});
+
 test("edits keep an append-only correction history", () => {
   const store = NooLog.createStore(catalog, NooLog.memoryAdapter(""));
   const created = store.create(draft({ outcome: "First note.", outcomeKind: "noticed" }));

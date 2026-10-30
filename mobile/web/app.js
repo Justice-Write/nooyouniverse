@@ -370,7 +370,7 @@
     var exported = store.exportDocument();
     var text = exported.ok ? JSON.stringify(exported.value, null, 2) : exported.raw || "";
     $("panel-transfer").innerHTML =
-      "<p class='help'>Validated JSON only. Import rejects unknown missions and any measurement/clinical fields. If a later APK is signed with a different debug key, export here and import there instead of overwriting device data. Wipe deletes personal notes on this device after you confirm — export first.</p>" +
+      "<p class='help'>Validated JSON only. Import rejects unknown missions and any measurement/clinical fields. If a later APK uses a different package or signing identity, export here and import there instead of overwriting device data. Wipe deletes personal notes on this device after you confirm — export first.</p>" +
       "<label for='exportBox'>Current export</label>" +
       "<textarea class='mono' id='exportBox' readonly>" +
       escapeHtml(text) +
