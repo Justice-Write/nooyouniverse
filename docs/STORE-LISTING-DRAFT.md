@@ -51,7 +51,7 @@ If any line below would make the public site or Mission 09 a product claim, it i
 ## What must exist before a human submits
 
 - [ ] `docs/REVIEW-PACKET.md` rows signed
-- [ ] Release (not debug) signing keys owned by Christian
+- [ ] Release (not debug) signing keys under owner control
 - [ ] Privacy policy URL that describes **this** on-device log (mypersonas.online pages are a starting point; confirm they cover local notes + export)
 - [ ] Screenshots that do not show fixtures as if they were a user’s medical history
 - [ ] Public site copy decision: Mission 09 / waitlist still say “not a released product” until you intentionally change them

@@ -2,15 +2,18 @@
 
 # Phone checklist — websites and apps to look at
 
-> **Frozen 2026-10-23:** do not fetch or install an APK from Drive. The old
-> signed/debug artifacts are superseded, no corrected signed candidate exists,
-> and the portfolio installation hold is active. Use this checklist only after
-> the owner releases that hold for one exact post-sign-verified hash.
+> **Current state 2026-10-30:** exact signed 0.2.3/code 5 is installed and
+> hash-verified; old Drive/debug/release artifacts remain superseded. Use this
+> checklist with exclusive device access, preserve both installed packages and
+> existing notes, and create synthetic test data only.
 
-The accepted future Android candidate is intended to expose three launcher
+The installed Android candidate declares three launcher
 entries. The live Chrome PWA is a separate fourth icon if installed.
 
-## On this device (future accepted APK)
+## On this device (remaining hands-on acceptance)
+
+- [x] 0.2.3/code 5 package installed and APK read back byte-identical
+- [x] Separate 0.2.2-debug/code 4 package/timestamps preserved
 
 - [ ] Three launcher icons: Noo YouNiverse, Noo Observation Log, Noo Check Hub
 - [ ] Check hub opens

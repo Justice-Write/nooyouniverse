@@ -15,14 +15,15 @@ npm run serve
 Open `http://127.0.0.1:4173`. First launch asks for a 21+ / not-medical acknowledgment. The log itself starts with **zero** observations. JSON under `tests/fixtures/` is synthetic test data only.
 
 iPhone: only the **public-site** PWA is live, and physical installation remains
-held. The private observation log has no iOS distribution path; a native build
+unverified. The private observation log has no iOS distribution path; a native build
 would require a separately authorized Mac/Xcode/signing workflow
 (`docs/IOS-HOME-SCREEN.md`).
 Android source/build verification: `docs/BUILD-ANDROID.md`. Preview the check
-hub and offline site copy locally through `npm run serve`. The portfolio
-installation hold remains active: do not sideload, uninstall, update, or
-install the browser PWA until the owner releases the hold for an exact verified
-artifact/action (`docs/DEVICE-INSTALL.md`, `docs/ANDROID-HOME-SCREEN.md`).
+hub and offline site copy locally through `npm run serve`. The exact signed
+0.2.3/code 5 release candidate is installed and hash-verified on the Android 13
+owner test phone. Full launcher/export/accessibility acceptance and physical
+browser-PWA acceptance remain open (`docs/DEVICE-INSTALL.md`,
+`docs/ANDROID-HOME-SCREEN.md`). Never uninstall or clear data to repeat a test.
 
 ## Rules baked into the store
 
