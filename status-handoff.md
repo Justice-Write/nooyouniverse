@@ -26,7 +26,7 @@ Signposts that point here: `CLAUDE.md` (Claude tools) and the banner at the top 
 
 ## 1. In progress
 
-None. Off-phone transfer checks complete; native tests require an exclusive scheduled slot.
+None. Desktop receipt reconciled; remaining physical acceptance requires scheduling.
 
 ## 2. Project
 
@@ -37,7 +37,7 @@ Evidence-literacy educational website plus a separate local observation notebook
 - **Repository and website:** `origin/main` is `73035f0131992ff4068b4dd478e11c618b28dcf0` after merged PRs #6 and #7. Production public bytes are the PR #6 website payload; a fresh 2026-10-30 readback matched all 29/29 served files. Manifest, service worker and CSP/nosniff/frame-deny/referrer/permissions headers are present. HTTP still serves without redirect, `www` does not canonicalize to apex, and HSTS is absent.
 - **Android package:** GitHub prerelease `v0.2.3-candidate-20261029` contains a three-file ZIP with digest `f46b99ebe616c7011a4640e4d7a8a4fd3d47ffaac4270903a0af33e8d5f74883`. Its APK is 0.2.3/code 5, package `com.nooyouniverse.observationlog`, SHA-256 `8a9c7fc1d32ec60771fbfa057ceb6d9bc92e88d2a46b7bb4c1ebb9410d419e27`, signer `1241938be1eea287e5797c8671640157082027a391b4dffb1168c7a4ccd0eb0f`, v2/v3 signed, aligned, zero requested permissions and 39/39 source assets. It is a test candidate, not a store release.
 - **Installed phone state:** that exact APK is installed on the connected owner test phone / Android 13. A fresh pull of the installed `base.apk` matched the published APK hash. Release 0.2.3/code 5 was updated in place; separate debug 0.2.2-debug/code 4 retains its original timestamps. No uninstall, clear-data, note read or migration occurred. Device identifiers and screenshots remain in the ignored private audit, not public Git.
-- **Desktop:** no Noo Start app or Noo-named desktop/Start-menu PWA shortcut was found. A browser tab is not an installed PWA. The public PWA remains installable; the private notebook is Android-only.
+- **Desktop:** public-site PWA installed in Edge; installer receipt records standalone launch and independent StartApps readback confirms registration on 2026-10-30. See docs/DESKTOP.md. Offline/accessibility acceptance remains pending; the private notebook is not installed or migrated by this PWA.
 - **Verification:** fresh 2026-10-30 checks pass: 31/31 tests, UI smoke, 30-file distribution boundary, zero npm vulnerabilities, Android debug/release builds and release lint (0 errors, 13 warnings). Fresh unsigned release SHA-256 is `d563271f26886ed47be7ed42b963c1eb90873a11c4eed48ecd4155b1bd881103`.
 - **Data boundary:** the installer starts empty. Personal observations, context, corrections, acknowledgment and exports stay in app/browser storage or an owner-chosen export location; waitlist addresses stay server-side. Research, chats, drafts, keys, credentials, screenshots, caches and historical APKs are development/private evidence and are not release inputs.
 - **Associated projects:** this repo is the build/deploy authority. MyPersonas holds the Cillian identity, public-source mirror and private planning/research; its focused PR #30 merged as `e10f9f1` and the 30-file mirror now matches canonical Noo bytes. Castleborn supplies fictional canon; AliaSpaces is the associated persona/social surface, not a runtime dependency. See `docs/PROJECT-STOCKTAKE-2026-10-30.md`.
@@ -45,7 +45,7 @@ Evidence-literacy educational website plus a separate local observation notebook
 ## 4. Blockers
 
 - Native export/import, process-restart, long-session, complete three-launcher and accessibility acceptance remain pending. Another app is currently the phone's foreground workflow; do not take it over without exclusive device access.
-- Desktop PWA installation remains unverified and is distinct from Android/private-notebook acceptance.
+- Desktop PWA installation and standalone launch are evidenced; physical offline/accessibility acceptance remains pending and distinct from Android/private-notebook acceptance.
 - Mission 11 reuses Mission 04's image, and the site's existing “human-reviewed” language lacks a located named, signed, hash-bound review record. Owner disposition plus qualified review is required; models cannot self-approve it. Missions 12–15 remain held.
 - HTTP→HTTPS, `www`→apex and then HSTS are account/edge decisions, not repository-only changes.
 - Current store eligibility, privacy/legal/accessibility review, iOS native delivery, remote sync, staffed community, newsletter operations and ingredient commerce remain separate gated tracks.
@@ -55,7 +55,7 @@ Evidence-literacy educational website plus a separate local observation notebook
 Use docs/TRANSFER-ACCEPTANCE.md for scheduled native transfer acceptance. Synthetic browser checks pass; Android provider completion remains unverified.
 
 1. Preserve both Android packages and their separate data stores; with exclusive phone access, complete native export/import/restart, all three launchers and accessibility checks.
-2. Install and verify the public PWA on desktop if the owner wants a desktop shell; do not describe that as installing the private notebook.
+2. Schedule physical offline/accessibility acceptance for the installed desktop public PWA; do not describe it as the private notebook.
 3. After future canonical public changes, update the MyPersonas mirror through another focused exact-parity change; never copy private `outputs/` material into either public repository.
 4. Resolve Mission 11 and name accountable reviewers before any held mission or ingredient/benefit content advances.
 5. Stage edge redirects before considering HSTS; reverify live bytes and headers after each provider change.
@@ -70,6 +70,8 @@ Use docs/TRANSFER-ACCEPTANCE.md for scheduled native transfer acceptance. Synthe
 From `mobile/`: run `npm ci`, `npm test`, `npm run smoke`, `npm run verify-distribution`, `npm audit --audit-level=high`, source-build Android, then inspect identity, signature, permissions, backup exclusions, alignment and 39/39 assets. Run `python mobile/scripts/verify-live.py` for production byte readback. Build, package, publish, install and hands-on acceptance are separate evidence states.
 
 ## 8. Work log
+
+- 2026-10-30 · Codex: reconciled desktop installer receipt and independent StartApps registration readback (16:31:01 UTC). Updated handoff, roadmaps, stocktake and data boundary; installation and standalone launch evidenced, offline/accessibility still pending. Documentation-only checks; no UI/phone/reinstall/provider/deployment or product release.
 
 - 2026-10-30 · Codex: expanded browser smoke with synthetic file-input import, duplicate-merge stability, malformed/unsupported import atomicity, bridge payload/retry and reload checks; all passed. Added docs/TRANSFER-ACCEPTANCE.md with native picker cancellation/save/readback, fixture isolation and receipt requirements. No phone operations or runtime/package changes. Separate release installation is not a declared canonical production-lineage decision or debug migration.
 

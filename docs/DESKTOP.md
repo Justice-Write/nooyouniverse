@@ -2,10 +2,17 @@
 
 # Desktop — local preview, future app install, or self-host
 
-> **Current state 2026-10-30:** the public PWA is live and browser-usable, but
-> no installed Noo Start-menu/desktop shortcut was found. Installing that PWA
-> is separate from installing the private Android notebook. The self-hosted
-> mirror remains optional and unpublished. Use synthetic data for previews.
+> **Current state 2026-10-30:** public-site PWA installed in Edge. The installer
+> receipt records a standalone Noo window; independent StartApps readback at
+> 16:31:01 UTC confirms `nooyouniverse.com-5EB1372A_fh581am6asnj6!App`.
+> Optional pins/autostart were declined. Offline and accessibility acceptance
+> remain pending. This does not install or migrate the private Android notebook.
+
+Evidence: private local `desktop-install-receipts.json` (Noo entry, public origin,
+installed=true, standalone title recorded, offlineAccepted=false) and
+`desktop-registration-readback.json` (Noo YouNiverse registration). Raw portfolio
+receipts remain outside this public repo; this is a receipt reconciliation,
+not a fresh UI test, reinstall, deployment or new product release.
 
 There is no separate desktop program and none is planned. The public site and
 the private observation log are both web apps with PWA-capable source. The
