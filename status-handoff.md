@@ -26,7 +26,7 @@ Signposts that point here: `CLAUDE.md` (Claude tools) and the banner at the top 
 
 ## 1. In progress
 
-Codex GPT-6: phone appeared during final readback. Inspect exact device/package/certificate, then perform an authorized in-place update only if identities match; preserve existing data. Update release evidence afterward.
+None. Release evidence finalized; remaining device/UI and human review work is listed below.
 
 ## 2. Project
 
@@ -34,15 +34,15 @@ Evidence-literacy educational website plus a separate local observation notebook
 
 ## 3. Current state
 
-Website published via PR #6 / production commit b26a79f. All 29 served files match committed bytes; manifest and security headers verified. Cloudflare version bd63dcbb-abcf-4489-9e2e-8aae51fed26a. 31 tests, browser smoke and dependency audit pass; Android source builds/lint pass (0 errors, 13 warnings). Signed 0.2.2/code 4 candidate verifies v2/v3 signatures, alignment and 39/39 assets. GitHub prerelease v0.2.2-candidate-20261029 contains the APK, checksum and data-preserving instructions. No personal records or private research are included.
+Website published via PR #6 / production commit b26a79f. All 29 served files match committed bytes; manifest and security headers verified. Cloudflare version bd63dcbb-abcf-4489-9e2e-8aae51fed26a. 31 tests, browser smoke and dependency audit pass; Android source builds/lint pass (0 errors, 13 warnings). Signed 0.2.3/code 5 candidate verifies v2/v3 signatures, alignment and 39/39 assets. GitHub prerelease v0.2.3-candidate-20261029 contains the APK, checksum and data-preserving instructions. No personal records or private research are included.
 
 ## 4. Blockers
 
-No phone connected: installation/native export/accessibility/long-session acceptance pending. Browser install UI could not be reliably completed amid concurrent computer-use activity; desktop installation is unverified. Historical source mirror remains on separate MyPersonas branches; do not sync from it blindly. Named human review for existing Mission 11 claim and held content, store eligibility and platform release reviews remain open. No store submission or remote sync.
+Android 0.2.3 installed and hash-verified on Galaxy Note20 Ultra Android 13; older debug app unchanged. Native export/accessibility/long-session and full launcher acceptance remain pending; concurrent phone use invalidated part of the UI sequence. Browser install UI could not be reliably completed amid concurrent computer-use activity; desktop installation is unverified. Historical source mirror remains on separate MyPersonas branches; do not sync from it blindly. Named human review for existing Mission 11 claim and held content, store eligibility and platform release reviews remain open. No store submission or remote sync.
 
 ## 5. Next actions
 
-Connect an identified Android device, inspect installed package/signature, preserve/export notes, then install the exact candidate without uninstalling to bypass conflicts. Complete native export/import/restart and accessibility checks. Finish desktop PWA installation when the UI is available. Reconcile the MyPersonas mirror through a focused change and obtain required content reviews. See docs/RELEASE-2026-10-29.md and docs/DATA-BOUNDARIES.md.
+Preserve the separate debug app and its notes; no automatic migration has occurred. Coordinate exclusive phone access and complete native export/import/restart and accessibility checks. Finish desktop PWA installation when the UI is available. Reconcile the MyPersonas mirror through a focused change and obtain required content reviews. See docs/RELEASE-2026-10-29.md and docs/DATA-BOUNDARIES.md.
 
 ## 6. Map
 
@@ -54,10 +54,10 @@ Run mobile npm test and npm run smoke; source-build Android; inspect package ide
 
 ## 8. Work log
 
+- 2026-10-30 UTC: runtime commit 40b2b8f builds 0.2.3/code 5 with onNewIntent routing. 31 tests and release build/lint pass. Signed and installed APK SHA-256 8a9c7fc1d32ec60771fbfa057ceb6d9bc92e88d2a46b7bb4c1ebb9410d419e27. Release package updated in place; debug version/timestamps unchanged. No notes read, migrated, deleted or included in package. Cold offline site and notebook acknowledgment rendered; complete launcher sequence remains unaccepted amid concurrent phone use.
+
 - 2026-10-30 UTC / 2026-10-29 Alaska · Codex GPT-6: PR #6 merged (b26a79f); Cloudflare deployment and 29/29 raw asset readback verified. Signed APK SHA-256 3cd9ade325fd0b8621ac64d77ee9940dca2683f2d9abc10fa4c6bdbe181f9728 published as a test prerelease, not a store release. Added repeatable APK/live verification scripts and personal-data boundary docs. No phone install, no successful desktop install, no personal data deletion/migration or private research upload. Historical branches and dirty checkout preserved. Private local inventory/handoff remains in the owner checkout; this public-safe root file is committed with release evidence.
 
 - 2026-10-29 · Codex GPT-6: integrated verified Android identity/backup/import fixes, public accessibility/disclosures/cache update, 30-file distribution allowlist and two contamination tests. Private research, held mission art, keys and owner data excluded from this clean release history. Final packaging and publication remain in progress.
 
 - 2026-10-29: isolated release worktree created from freshly fetched origin/main. No owner worktree reset or history rewrite.
-
-Phone follow-through: 0.2.2 installed side-by-side with untouched debug app; installed hash verified. Native routing test identified missing onNewIntent handling. Codex is correcting this in 0.2.3/code 5 and rebuilding before final acceptance.
