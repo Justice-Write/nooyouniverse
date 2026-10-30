@@ -1,8 +1,15 @@
+> Current release status: see [RELEASE-2026-10-29.md](RELEASE-2026-10-29.md). Earlier hold and branch statements below are historical; rejected old APKs remain rejected.
+
 # Android — save the live website as a browser app
 
-This cloud checkout **cannot push an icon onto your phone**. After you open the live site in Chrome, Android can put it on the home screen like an app.
+This repository cannot push an icon onto the owner's phone. The portfolio-wide
+installation hold is active, so the steps below are a future acceptance
+checklist, not permission to install either the PWA or an APK.
 
-PWA files (`public/manifest.webmanifest`, maskable PNG icons, `public/sw.js`, `public/pwa-register.js`) are in this branch and meet Chrome’s install fields (standalone display, 192/512 any + maskable icons, fetch-handling service worker on every public page). They appear on `https://nooyouniverse.com` only after a human merges and Cloudflare deploys. Production still 404s `/manifest.webmanifest` today. Until then, install **Noo YouNiverse** from the debug APK for the saved website, and Chrome ⋮ → **Add to Home screen** still creates a shortcut to the live site.
+PWA files (`public/manifest.webmanifest`, maskable PNG icons, `public/sw.js`,
+`public/pwa-register.js`) meet Chrome's install fields and were reverified live
+at `https://nooyouniverse.com` on 2026-10-23. This proves the web delivery
+surface, not physical-device installation or acceptance.
 
 ## Live site (Chrome)
 
@@ -16,12 +23,17 @@ That icon is the **live** website. Waitlist submit works there. It is not the pr
 
 ## Observation log + offline site copy
 
-Those live in the debug APK (`docs/DEVICE-INSTALL.md`). One sideload puts **three** icons on the launcher:
+Those are intended to live in a future corrected release APK
+(`docs/DEVICE-INSTALL.md`). The package declares **three** launcher entries;
+their physical-device presentation remains unaccepted:
 
 - **Noo YouNiverse** — offline snapshot of `public/`
 - **Noo Observation Log** — private notes app
 - **Noo Check Hub** — every page and live Chrome link to look at
 
-The APK is also copied to Google Drive folder **Noo YouNiverse — phone check** on the owner account so you can install from the Drive app on the phone.
+Old APK copies may still exist in the owner Drive folder **Noo YouNiverse —
+phone check**. They are superseded and must not be installed. No corrected
+signed APK has been placed there.
 
-Do not confuse the Chrome home-screen icon (live site) with the APK icon (debug hub).
+Do not confuse the Chrome home-screen icon (live site) with the Android package
+launcher entries (offline site, observation log and hub).

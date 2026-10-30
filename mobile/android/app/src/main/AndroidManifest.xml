@@ -12,6 +12,8 @@
     </queries>
     <application
         android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/ic_launcher"
         android:roundIcon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -32,7 +34,7 @@
             android:label="@string/app_name_hub"
             android:icon="@drawable/ic_launcher"
             android:roundIcon="@drawable/ic_launcher"
-            android:taskAffinity="com.nooyouniverse.observationlog.debug.hub"
+            android:taskAffinity="${applicationId}.hub"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +47,7 @@
             android:label="@string/app_name_site"
             android:icon="@drawable/ic_launcher"
             android:roundIcon="@drawable/ic_launcher"
-            android:taskAffinity="com.nooyouniverse.observationlog.debug.site"
+            android:taskAffinity="${applicationId}.site"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,7 +60,7 @@
             android:label="@string/app_name_log"
             android:icon="@drawable/ic_launcher"
             android:roundIcon="@drawable/ic_launcher"
-            android:taskAffinity="com.nooyouniverse.observationlog.debug.log"
+            android:taskAffinity="${applicationId}.log"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

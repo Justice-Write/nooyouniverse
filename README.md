@@ -1,22 +1,26 @@
-# nooyouniverse.com — deploy repo
+# Noo YouNiverse
 
-Static site for Noo YouNiverse (Cillian O'Sullivan, a fictional Castleborn character).
+Evidence-literacy missions hosted by Cillian O'Sullivan, a fictional AI-assisted character, and a separate local-first observation notebook. Observations are not clinical measurements. Educational software; not medical advice or a store-approved health product.
 
-**Source of truth:** `MyPersonas/nooyouniverse.com/` — edit there, copy into `public/` here, push to deploy.
-Docs & roadmap: `MyPersonas/nooyouniverse.com/SITE-ROADMAP.md`.
-Agent handoff: `AGENTS.md`. Mobile milestone roadmap: `docs/MOBILE-ROADMAP.md`. Desktop/self-host: `docs/DESKTOP.md`, `deploy/docker/`. Missions 12–15 art brief: `docs/CLAUDE-DESIGN-BRIEF-missions-12-15.md`.
+Read [status-handoff.md](status-handoff.md) first. See [current release](docs/RELEASE-2026-10-29.md), [data boundaries](docs/DATA-BOUNDARIES.md), and [roadmap](SITE-ROADMAP.md).
 
-`mobile/` is a **private debug observation log** plus a check-hub APK that also carries an offline copy of this site. One sideload adds three launcher apps (website copy, observation log, check hub); install `mobile/dist/noo-observation-log-0.2.0-release.apk`. Cloudflare still serves only `public/`. The public Mission Log and waitlist still describe the tracker as not a released product. PWA files in `public/` let Android Chrome add the live site to the home screen after deploy. Owner phone drop: Google Drive folder `Noo YouNiverse — phone check`.
+## Components
 
-## Deploy
+- `public/`: website, eleven existing missions, sources/corrections and browser-installable PWA. Cloudflare serves only this directory.
+- `mobile/web/`: private-on-device notebook and check hub; no accounts or remote sync.
+- `mobile/android/`: source-built Android wrapper, three launcher entries, local storage and explicit JSON export/import; no Internet or sensor permission.
+- `deploy/docker/`: optional public-site mirror configuration, not an installed service.
 
-Cloudflare Workers (static assets), Git-connected to this repo. A push to `main` is configured to trigger a build, but that hook has failed before; every release requires dashboard build/deployment confirmation and live readback.
+The historical source mirror is `MyPersonas/nooyouniverse.com`. Parallel changes remain there; do not overwrite this reviewed release from an older checkout. This repository's release commit is the build/deploy authority; reconcile the mirror explicitly.
 
-- `wrangler.jsonc` — declares `./public` as the asset directory; `404.html` handles unknown routes.
-- `public/` — the entire published site. Nothing outside `public/` is served.
-- `public/_headers` — Cloudflare static response headers (CSP, nosniff, frame-deny, referrer, permissions). On `main` since 2026-09-26; verify live after each deploy.
-- `public/CNAME` — retained for the GitHub Pages fallback path only; harmless on Cloudflare.
+## Verify and build
 
-The MyPersonas deployment helper is preview-first. Do not push this repository merely to test a sync: a push to `main` may publish externally.
+From `mobile/`: `npm ci`, `npm test`, `npm run smoke`, `npm run verify-distribution`. Use the committed Gradle wrapper for Android, then verify package/permissions/backup rules/assets and signature. See [build instructions](docs/BUILD-ANDROID.md). Historical repacks are not accepted releases.
 
-Custom domain is attached in the Cloudflare dashboard (Worker → Domains → Custom domains).
+`mobile/scripts/public-assets.json` lists the 30 reviewed public files. Unexpected files or links stop offline bundling. Every change within an allowed file still needs review. Keep exports, research, credentials, keys and device/browser profiles outside release payloads.
+
+## Release and install
+
+`wrangler.jsonc` publishes only `public/`. A push is not proof of deployment: verify live bytes, service worker and headers. Desktop installation uses the public-site PWA; it does not install the private notebook.
+
+Use only the candidate identified in the current release record. Historical 0.2.0/0.2.1/debug APKs are not upgrade instructions. Verify device, package and signer before installing; preserve existing notes. Store submission is separate.

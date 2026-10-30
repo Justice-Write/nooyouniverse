@@ -1,6 +1,12 @@
+> Current release status: see [RELEASE-2026-10-29.md](RELEASE-2026-10-29.md). Earlier hold and branch statements below are historical; rejected old APKs remain rejected.
+
 # Store listing drafts — **do not submit**
 
-Store accounts are verified (Google personal). **Submissions stay later.** This file is copy and Data Safety answers for a future human upload. Cursor must not open Play Console / App Store Connect or press Submit.
+A prior project note says a Google personal account was verified, but that
+access was not rechecked on 2026-10-23; Apple account/signing readiness is
+unverified. **Submissions stay later.** This file is copy and Data Safety
+answers for a future human upload. Agents must not open Play Console / App
+Store Connect or press Submit without fresh exact owner authorization.
 
 If any line below would make the public site or Mission 09 a product claim, it is still a **draft**.
 
@@ -28,8 +34,12 @@ If any line below would make the public site or Mission 09 a product claim, it i
 | App activity / analytics | No | No | — |
 | Device IDs | No | No | — |
 
-- Encrypted in transit: N/A (no network permission on the Android debug APK).
-- Users can request deletion: wipe on device + OS uninstall. No server copy exists to delete.
+- Encrypted in transit: N/A based on current release source/merged-manifest
+  evidence showing no `INTERNET` permission; reverify the exact signed
+  submission artifact before answering in a store console.
+- User-controlled deletion: in-app wipe. A user may deliberately uninstall the
+  app, but uninstall must not be used as a migration/signature-mismatch
+  workaround. No server copy exists to delete.
 - Data is not sold.
 - Independent security review: **not claimed**.
 
@@ -49,4 +59,6 @@ If any line below would make the public site or Mission 09 a product claim, it i
 
 ## iOS binary
 
-This Linux checkout cannot produce an IPA. Listing copy may be drafted; TestFlight is later and needs a Mac.
+This repository workflow has no authorized Mac/Xcode/signing lane and cannot
+produce an accepted IPA. Listing copy may be drafted; TestFlight is later and
+needs a separately authorized Mac and owner signing credentials.

@@ -7,10 +7,14 @@
 import { cpSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { validatePublicDirectory } from "./distribution-boundary.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const src = resolve(root, "public");
 const dest = resolve(root, "mobile/android/app/src/main/assets/site");
+
+// Refuse unreviewed files before touching the existing offline bundle.
+validatePublicDirectory(src);
 
 mkdirSync(dirname(dest), { recursive: true });
 rmSync(dest, { recursive: true, force: true });

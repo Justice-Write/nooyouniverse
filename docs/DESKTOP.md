@@ -1,14 +1,21 @@
-# Desktop — install as an app, or self-host
+> Current release status: see [RELEASE-2026-10-29.md](RELEASE-2026-10-29.md). Earlier hold and branch statements below are historical; rejected old APKs remain rejected.
+
+# Desktop — local preview, future app install, or self-host
+
+> **2026-10-23 hold:** do not install either PWA on a desktop or publish a
+> self-hosted mirror while the portfolio installation/release hold is active.
+> Local source preview and test runs are allowed; use synthetic data only.
 
 There is no separate desktop program and none is planned. The public site and
-the private observation log are both web apps; on desktop they install the
-same way they do on a phone, and the site can additionally be self-hosted as a
-container. Anything heavier (Electron/Tauri) would add an update channel and a
-signing chain for zero new capability.
+the private observation log are both web apps with PWA-capable source. The
+public site can additionally be self-hosted as a container after a separate
+release decision. Anything heavier (Electron/Tauri) would add an update
+channel and a signing chain for no currently approved capability.
 
-## Install nooyouniverse.com as a desktop app
+## Future public-site desktop acceptance
 
-Chrome / Edge / Brave (Windows, macOS, Linux):
+After the hold is explicitly released for this action, Chrome / Edge / Brave
+(Windows, macOS, Linux) can be checked as follows:
 
 1. Open https://nooyouniverse.com.
 2. Address bar → the **Install** icon (or ⋮ → *Cast, save and share* → *Install
@@ -17,20 +24,22 @@ Chrome / Edge / Brave (Windows, macOS, Linux):
    and `/corrections` are pinned as app shortcuts (right-click the taskbar
    icon).
 
-What you get: the network-first shell from `public/sw.js`, so a corrected page
-is never served stale, and an honest offline page when the network is gone.
+What the source intends: the network-first shell from `public/sw.js` prefers a
+fresh network response and falls back to cached content or the offline page
+when the network is unavailable. That behavior still needs platform acceptance.
 Safari on macOS: File → *Add to Dock* (Sonoma+). Firefox has no desktop PWA
 install; bookmark it.
 
-## Run the private observation log on desktop
+## Preview the private observation log on desktop
 
 ```bash
 cd mobile && npm run serve      # http://127.0.0.1:4173
 ```
 
-Then install it from Chrome the same way. Notes stay in that browser profile's
-storage; use Transfer → export/import JSON to move them. `localhost` counts as
-a secure context, so the service worker and install prompt both work.
+Open the local URL for preview/testing only; do not install it or enter real
+private observations while the hold is active. Browser-profile storage may
+persist local test notes. `localhost` is a secure context, so service-worker
+behavior can be tested without publishing the private log.
 
 ## Self-host / virtual appliance
 

@@ -1,13 +1,32 @@
+> Current release status: see [RELEASE-2026-10-29.md](RELEASE-2026-10-29.md). Earlier hold and branch statements below are historical; rejected old APKs remain rejected.
+
 # Owner device install — sideload + home-screen playbook
 
-This cloud checkout cannot tap your launcher. The APK and install note are in your Google Drive folder so the phone can fetch them: https://drive.google.com/drive/folders/1sAyTL0yxwY8SpEpfpHBnXpR8w0nOAway
+**2026-10-23: portfolio-wide installation hold remains active. Do not execute
+any install, uninstall, update or browser-app installation recipe below until
+that gate is explicitly released. There is currently no approved installable
+APK.**
 
-**Install this:** `mobile/dist/noo-observation-log-0.2.0-release.apk` (2026-09-26)  
-Package id: `com.nooyouniverse.observationlog` · versionCode 2 · signed with the studio release key (`_ops/keystores/noo-release-2026.jks`, cert SHA-256 `1241938b…eb0f`)  
-Launcher names after install: **Noo Check Hub**, **Noo YouNiverse**, **Noo Observation Log**  
-Still a sideload, not a store build. The older `noo-observation-log-debug.apk` (`….debug` id, 0.1.0) can stay installed side by side; move notes with Transfer → export/import.
+An old APK/install-note bundle may remain in the owner Drive folder. It is
+historical and superseded by this hold; do not fetch or install it. This local
+checkout cannot perform or prove launcher acceptance on the owner's device.
 
-Existing local phone-test prototypes are **not** in this cloud checkout. Do not overwrite them.
+**Do not install:** `mobile/dist/noo-observation-log-0.2.0-release.apk`,
+`mobile/dist/noo-observation-log-0.2.1-release.apk`, or the debug APK. The two
+signed releases predate the verified release-identity and Android
+backup/transfer fixes. Their presence is historical evidence, not acceptance.
+
+Corrected source is version 0.2.2 / `versionCode 4`, package
+`com.nooyouniverse.observationlog`; that version/artifact identity avoids
+collision with the rejected signed 0.2.1 version. Exact implementation commit
+`a757914428e6d4becf3abf8fc8f0056530a611ba` produced unsigned release SHA-256
+`889f2df1d3e4a6192624215727a988776263ed250609f47e56a99086cf192e6b`.
+This is **not** installable approval. Before this playbook becomes executable,
+that exact unsigned hash must be signed in an owner-authorized session,
+rechecked after signing, assigned a signed SHA-256 and named here.
+
+Existing phone-test prototypes and their data are **not** available to this
+repository checkout. Do not overwrite them.
 
 ## What the APK now contains
 
@@ -18,7 +37,10 @@ Existing local phone-test prototypes are **not** in this cloud checkout. Do not 
 | **Private observation log** | On-device notes for missions 01–11 |
 | **Live in Chrome** links | Real `https://nooyouniverse.com` and AliaSpaces pages |
 
-The APK still has **no** `INTERNET` permission. Live links hand off to Chrome. Waitlist submit only works on the live site. The **Noo YouNiverse** launcher icon is the saved website as an app. The live site becomes a Chrome PWA after those files are deployed.
+The candidate still has **no** `INTERNET` permission. Live links hand off to
+Chrome. Waitlist submit only works on the live site. The **Noo YouNiverse** APK
+launcher entry is an offline website copy; it is separate from the live Chrome
+PWA, whose manifest/service worker are already deployed.
 
 ## Preserve data if signing differs
 
@@ -26,15 +48,20 @@ Android will refuse an upgrade when the signature does not match.
 
 1. Open the **old** install.
 2. Transfer → Download JSON (keep that file off-device if you want a spare).
-3. Install this APK **side-by-side** if the old id/signature differs, or uninstall only after the export is safe.
-4. Transfer → Import (merge). Never replace until you have checked the export.
+3. After a new signed candidate is approved, install it **side-by-side only if
+   the package ID differs**. If the package ID is the same but the signer
+   differs, stop: Android will reject the update. Preserve the old app and its
+   export; do not uninstall or clear data to work around the mismatch.
+4. Only in an approved side-by-side/new-install path, use Transfer → Import
+   (merge). Never replace until you have checked the export.
 
 ## Android sideload (personal Google account)
 
 1. Enable Install unknown apps for the Files / browser app you will use.
-2. Copy `mobile/dist/noo-observation-log-0.2.0-release.apk` to the phone (or open it from the Drive folder above).
+2. Copy only the newly signed, hash-verified candidate named in a later evidence record to the phone. Do not use either historical signed file currently in `mobile/dist/` or an old Drive copy.
 3. Install. Accept only the sideload prompt — this APK requests **no** network, sensors, or accounts.
-4. After install you should see **three** home-screen apps from this one APK:
+4. The package declares **three launcher entries**; verify their actual launcher
+   presentation on the physical device (not yet accepted):
    - **Noo YouNiverse** — saved website (offline copy of home, /log, /sources, /corrections)
    - **Noo Observation Log** — the notes app we are building
    - **Noo Check Hub** — every page and live Chrome link to check
@@ -49,15 +76,20 @@ Android will refuse an upgrade when the signature does not match.
 
 See `docs/ANDROID-HOME-SCREEN.md`.
 
-1. From the hub, tap **https://nooyouniverse.com/** (opens Chrome).
+1. After the portfolio installation hold is explicitly lifted, from the hub tap **https://nooyouniverse.com/** (opens Chrome).
 2. Chrome ⋮ → **Add to Home screen** / **Install app**.
-3. You now have two icons: **Noo Check Hub (debug)** (APK) and **Noo YouNiverse** (live site).
+3. In the intended accepted setup, the APK contributes three launcher entries
+   (**Noo Check Hub**, **Noo YouNiverse** offline, **Noo Observation Log**) and
+   Chrome contributes a fourth **Noo YouNiverse** icon for the live PWA.
 
-The live-site install uses PWA files in `public/`. Those are on this branch; they go live after a human merge + Cloudflare deploy. Chrome can still add a shortcut to the current production site today.
+The live-site install uses PWA files in `public/`; they were reverified live on
+2026-10-23. A real-device install/update/offline check remains unperformed.
 
 ## Tick when done
 
-- [ ] Sideloaded `noo-observation-log-0.2.0-release.apk` (new package id — no signature collision with the debug build)
+- [ ] Portfolio installation hold explicitly lifted for this exact candidate
+- [ ] Candidate filename, full SHA-256, package, version code and signing certificate matched the fresh evidence record
+- [ ] Sideloaded only that newly approved candidate (no historical `mobile/dist/` APK)
 - [ ] Hub listed site copy + observation log + live links
 - [ ] Offline Mission Log 01–11 readable without radio
 - [ ] Gate accepted on the observation log
@@ -66,25 +98,25 @@ The live-site install uses PWA files in `public/`. Those are on this branch; the
 - [ ] Live site added to the home screen from Chrome
 - [ ] Old prototype data preserved
 
-## iOS (home-screen PWA only)
+## iOS (public-site PWA only; private log has no distribution path)
 
-See `docs/IOS-HOME-SCREEN.md`. This Linux checkout cannot sign an IPA.
+See `docs/IOS-HOME-SCREEN.md`. Public-site physical installation is held; the
+private observation log has no authorized iOS host or native build.
 
-## Debug persistence probe (emulator or `adb`)
+## Historical debug persistence probe (emulator evidence only)
 
 Debug builds accept an extra that writes `/data/data/com.nooyouniverse.observationlog.debug/files/noo-probe.json`. It is **not** a user-facing feature and is compiled only when `BuildConfig.DEBUG` is true.
 
-```bash
-adb install -r mobile/dist/noo-observation-log-debug.apk
-adb shell am start -n com.nooyouniverse.observationlog.debug/com.nooyouniverse.observationlog.MainActivity \
-  -e noo_debug_cmd seed
-# wait ~3s, then:
-adb shell am force-stop com.nooyouniverse.observationlog.debug
-adb shell am start -n com.nooyouniverse.observationlog.debug/com.nooyouniverse.observationlog.MainActivity \
-  -e noo_debug_cmd dump
-```
-
-`mobile/scripts/emulator-persistence.sh` runs that sequence on a local emulator when the SDK is present. Debug seed/dump still open the observation log, not the hub.
+The 2026-09-24 emulator result is retained as historical evidence. Do not run
+the old install command from this owner-device playbook while the portfolio
+hold is active: an unscoped `adb` command could target a connected phone.
+`mobile/scripts/emulator-persistence.sh` is now fail-closed: it requires the
+explicit `NOO_EMULATOR_PROBE_ACK=AUTHORIZED_EMULATOR_ONLY` acknowledgment, an
+explicit `NOO_EMULATOR_SERIAL=emulator-<even-port>`, scopes every `adb` command
+to that serial, requires `NOO_EXPECTED_DEBUG_SHA256` to match the separately
+built current debug APK, and proves `ro.kernel.qemu=1` before install. It may be used only
+in a separately authorized emulator-only session with no owner device
+connected. Debug seed/dump open the observation log, not the hub.
 
 ## What this playbook is not
 
