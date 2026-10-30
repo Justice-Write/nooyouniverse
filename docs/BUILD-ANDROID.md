@@ -7,11 +7,11 @@ emulator probe**: offline website copy, observation log, and a checklist of
 live pages. It is not a Play Store artifact or current device-install
 authorization. Do not upload it to any store from this recipe.
 
-> **2026-10-23 execution boundary:** building and inspecting locally is allowed;
-> installing, signing, distributing or uploading is not. The portfolio
-> installation hold remains active. Both signed files in `mobile/dist/` are
-> rejected historical artifacts. Current release acceptance requires a fresh
-> source build and all checks listed below; the old repack is not sufficient.
+> **Current state 2026-10-30:** source-built 0.2.3/code 5 has been signed,
+> published as a test prerelease and installed/hash-verified. Both signed files
+> committed in `mobile/dist/` remain rejected historical artifacts. Current
+> release acceptance still requires the fresh source build and all checks below;
+> the old repack is not sufficient. Do not reinstall merely to repeat evidence.
 
 The app uses a WebView over offline assets. It has no `INTERNET` permission and does not read sensors. Live `https://` taps open Chrome.
 
@@ -42,7 +42,7 @@ The APK lands at:
 
 `mobile/android/app/build/outputs/apk/debug/app-debug.apk`
 
-After the owner explicitly lifts the hold for the exact reported debug hash,
+Before any future debug installation,
 an authorized tester must first read back the named target serial/model, verify
 they match the authorization, and then scope installation to that serial:
 
@@ -66,7 +66,7 @@ have a **different signature**.
 - **Preserve user data:** export JSON from the old install, keep the old install
   intact, and install the approved candidate side-by-side only when its package
   identity permits that. Do not uninstall to work around a signature mismatch.
-- Existing owner phone-test prototypes and their data are not available to this repository checkout.
+- Existing release and debug packages have separate private data stores. Preserve both; do not read or migrate owner notes during build verification.
 
 ## If the SDK is missing
 

@@ -2,7 +2,7 @@
 
 Evidence-literacy missions hosted by Cillian O'Sullivan, a fictional AI-assisted character, and a separate local-first observation notebook. Observations are not clinical measurements. Educational software; not medical advice or a store-approved health product.
 
-Read [status-handoff.md](status-handoff.md) first. See [current release](docs/RELEASE-2026-10-29.md), [data boundaries](docs/DATA-BOUNDARIES.md), and [roadmap](SITE-ROADMAP.md).
+Read [status-handoff.md](status-handoff.md) first. See the [current release](docs/RELEASE-2026-10-29.md), [project stocktake](docs/PROJECT-STOCKTAKE-2026-10-30.md), [data boundaries](docs/DATA-BOUNDARIES.md), and [roadmap](SITE-ROADMAP.md).
 
 ## Components
 
@@ -23,4 +23,4 @@ From `mobile/`: `npm ci`, `npm test`, `npm run smoke`, `npm run verify-distribut
 
 `wrangler.jsonc` publishes only `public/`. A push is not proof of deployment: verify live bytes, service worker and headers. Desktop installation uses the public-site PWA; it does not install the private notebook.
 
-Use only the candidate identified in the current release record. Historical 0.2.0/0.2.1/debug APKs are not upgrade instructions. Verify device, package and signer before installing; preserve existing notes. Store submission is separate.
+Use only the candidate identified in the current release record. The exact 0.2.3/code 5 candidate is installed on the verified Android 13 owner test phone; that does not complete hands-on launcher/export/accessibility acceptance. Historical 0.2.0/0.2.1/debug APKs are not upgrade instructions. Verify device, package and signer before any future update; preserve existing notes. Store submission is separate.

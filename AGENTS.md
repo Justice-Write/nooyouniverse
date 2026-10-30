@@ -12,7 +12,7 @@ Read `status-handoff.md`, then this file, `docs/MOBILE-ROADMAP.md`, `public/log.
 
 ## What this repository is
 
-`Justice-Write/nooyouniverse` (renamed from `castleism/…`) is the **deploy repo** for the static site. Cloudflare Workers serves only `public/`. The current long-form site roadmap is on the unpushed MyPersonas branch `codex/noo-source-parity-20261023` at `aaf212fa59b20d6b5deea8b3bd3598eec4aa533a`; the MyPersonas owner checkout and `origin/main` remain stale until that focused branch is reviewed and integrated.
+`Justice-Write/nooyouniverse` (renamed from `castleism/…`) is the **build/deploy authority**. Cloudflare Workers serves only `public/`. MyPersonas retains a reconciled `nooyouniverse.com/` public-source mirror and private planning/research, but neither may overwrite this reviewed release. Future mirror updates must be focused exact-parity changes from this repo; never directory-sync private `outputs/` material.
 
 Cillian O'Sullivan is a fictional, AI-assisted, human-reviewed Castleborn character. Content is educational only. Nothing here is medical advice.
 
@@ -39,7 +39,7 @@ Mission 09 and the homepage waitlist describe an **unbuilt / not-released produc
 - Export/import is versioned JSON (`noo-private-observation-log` v1) and rejects unknown missions and clinical/measurement fields.
 - Edits keep an append-only correction history. Users can wipe all notes on device. A 21+ / not-medical acknowledgment is stored separately from notes.
 - Test fixtures in `mobile/tests/fixtures/` are synthetic. The app starts empty.
-- Existing owner phone-test prototypes are not available to this repository checkout; do not claim access to them. Side-by-side is possible only when package IDs differ. If the package ID is the same but the signer differs, stop and preserve the old app/export; never uninstall or clear data to bypass the mismatch.
+- The exact 0.2.3/code 5 release candidate is installed on the verified owner phone; the separate debug package remains installed. Installation is not full device acceptance. Side-by-side is possible only when package IDs differ. If a package ID is the same but the signer differs, stop and preserve the old app/export; never uninstall or clear data to bypass the mismatch.
 
 ## Commands
 
@@ -52,14 +52,14 @@ npm run serve   # http://127.0.0.1:4173
 
 Android APK: `docs/BUILD-ANDROID.md`. Current candidates must be source-built with Gradle; the historical Gradle-free repack path is not release acceptance evidence. Release key: `_ops/keystores/`, never in git.
 Desktop / self-host: `docs/DESKTOP.md`, `deploy/docker/`.
-Owner phone installation remains on hold: `docs/DEVICE-INSTALL.md`.
-Android Chrome home-screen site (also held pending owner/device acceptance): `docs/ANDROID-HOME-SCREEN.md`.
-Phone checklist (not executable while the hold is active): `docs/PHONE-CHECKLIST.md`.
+Current installation and preservation record: `docs/DEVICE-INSTALL.md` plus `docs/RELEASE-2026-10-29.md`.
+Android Chrome home-screen site: `docs/ANDROID-HOME-SCREEN.md`; physical PWA acceptance remains separate.
+Remaining phone acceptance checklist: `docs/PHONE-CHECKLIST.md`; use only with exclusive device access and synthetic test data.
 Any older Drive APK/install-note bundle is superseded and must not be installed or refreshed.
 Human review packet (unsigned): `docs/REVIEW-PACKET.md`.
 Store copy drafts — do not submit: `docs/STORE-LISTING-DRAFT.md`.
 Remote sync stays gated: `docs/SYNC-BACKLOG.md`.
-iOS: only the **public-site** PWA files are live (physical install held); the private observation log has no iOS distribution path. A native build would require a separately authorized Mac/Xcode/signing workflow — `docs/IOS-HOME-SCREEN.md`.
+iOS: only the **public-site** PWA files are live (physical install unverified); the private observation log has no iOS distribution path. A native build would require a separately authorized Mac/Xcode/signing workflow — `docs/IOS-HOME-SCREEN.md`.
 Emulator process-death probe: `mobile/scripts/emulator-persistence.sh`.
 
 ## Hard limits

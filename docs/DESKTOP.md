@@ -2,9 +2,10 @@
 
 # Desktop — local preview, future app install, or self-host
 
-> **2026-10-23 hold:** do not install either PWA on a desktop or publish a
-> self-hosted mirror while the portfolio installation/release hold is active.
-> Local source preview and test runs are allowed; use synthetic data only.
+> **Current state 2026-10-30:** the public PWA is live and browser-usable, but
+> no installed Noo Start-menu/desktop shortcut was found. Installing that PWA
+> is separate from installing the private Android notebook. The self-hosted
+> mirror remains optional and unpublished. Use synthetic data for previews.
 
 There is no separate desktop program and none is planned. The public site and
 the private observation log are both web apps with PWA-capable source. The
@@ -12,9 +13,9 @@ public site can additionally be self-hosted as a container after a separate
 release decision. Anything heavier (Electron/Tauri) would add an update
 channel and a signing chain for no currently approved capability.
 
-## Future public-site desktop acceptance
+## Public-site desktop acceptance
 
-After the hold is explicitly released for this action, Chrome / Edge / Brave
+Chrome / Edge / Brave
 (Windows, macOS, Linux) can be checked as follows:
 
 1. Open https://nooyouniverse.com.
@@ -36,8 +37,8 @@ install; bookmark it.
 cd mobile && npm run serve      # http://127.0.0.1:4173
 ```
 
-Open the local URL for preview/testing only; do not install it or enter real
-private observations while the hold is active. Browser-profile storage may
+Open the local URL for preview/testing only; do not enter real
+private observations. Browser-profile storage may
 persist local test notes. `localhost` is a secure context, so service-worker
 behavior can be tested without publishing the private log.
 

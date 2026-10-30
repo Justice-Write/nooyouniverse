@@ -1,6 +1,6 @@
 # Noo YouNiverse — status handoff
 
-Updated: 2026-10-29 · Codex GPT-6. Public-safe release record.
+Updated: 2026-10-30 · Codex GPT-6. Public-safe release record.
 
 ## 0. Protocol — mandatory for every agent, every model, every task
 
@@ -26,33 +26,50 @@ Signposts that point here: `CLAUDE.md` (Claude tools) and the banner at the top 
 
 ## 1. In progress
 
-None. Release evidence finalized; remaining device/UI and human review work is listed below.
+None. Remaining device/UI and human-review work is listed below.
 
 ## 2. Project
 
-Evidence-literacy educational website plus a separate local observation notebook. Observations are not medical measurements. No new health claims, held missions, remote sync or store submission are approved by this release.
+Evidence-literacy educational website plus a separate local observation notebook. Observations are not medical measurements. No new health claims, held missions, remote sync, commerce or store submission are approved by this release.
 
 ## 3. Current state
 
-Website published via PR #6 / production commit b26a79f. All 29 served files match committed bytes; manifest and security headers verified. Cloudflare version bd63dcbb-abcf-4489-9e2e-8aae51fed26a. 31 tests, browser smoke and dependency audit pass; Android source builds/lint pass (0 errors, 13 warnings). Signed 0.2.3/code 5 candidate verifies v2/v3 signatures, alignment and 39/39 assets. GitHub prerelease v0.2.3-candidate-20261029 contains the APK, checksum and data-preserving instructions. No personal records or private research are included.
+- **Repository and website:** `origin/main` is `73035f0131992ff4068b4dd478e11c618b28dcf0` after merged PRs #6 and #7. Production public bytes are the PR #6 website payload; a fresh 2026-10-30 readback matched all 29/29 served files. Manifest, service worker and CSP/nosniff/frame-deny/referrer/permissions headers are present. HTTP still serves without redirect, `www` does not canonicalize to apex, and HSTS is absent.
+- **Android package:** GitHub prerelease `v0.2.3-candidate-20261029` contains a three-file ZIP with digest `f46b99ebe616c7011a4640e4d7a8a4fd3d47ffaac4270903a0af33e8d5f74883`. Its APK is 0.2.3/code 5, package `com.nooyouniverse.observationlog`, SHA-256 `8a9c7fc1d32ec60771fbfa057ceb6d9bc92e88d2a46b7bb4c1ebb9410d419e27`, signer `1241938be1eea287e5797c8671640157082027a391b4dffb1168c7a4ccd0eb0f`, v2/v3 signed, aligned, zero requested permissions and 39/39 source assets. It is a test candidate, not a store release.
+- **Installed phone state:** that exact APK is installed on the connected owner test phone / Android 13. A fresh pull of the installed `base.apk` matched the published APK hash. Release 0.2.3/code 5 was updated in place; separate debug 0.2.2-debug/code 4 retains its original timestamps. No uninstall, clear-data, note read or migration occurred. Device identifiers and screenshots remain in the ignored private audit, not public Git.
+- **Desktop:** no Noo Start app or Noo-named desktop/Start-menu PWA shortcut was found. A browser tab is not an installed PWA. The public PWA remains installable; the private notebook is Android-only.
+- **Verification:** fresh 2026-10-30 checks pass: 31/31 tests, UI smoke, 30-file distribution boundary, zero npm vulnerabilities, Android debug/release builds and release lint (0 errors, 13 warnings). Fresh unsigned release SHA-256 is `d563271f26886ed47be7ed42b963c1eb90873a11c4eed48ecd4155b1bd881103`.
+- **Data boundary:** the installer starts empty. Personal observations, context, corrections, acknowledgment and exports stay in app/browser storage or an owner-chosen export location; waitlist addresses stay server-side. Research, chats, drafts, keys, credentials, screenshots, caches and historical APKs are development/private evidence and are not release inputs.
+- **Associated projects:** this repo is the build/deploy authority. MyPersonas holds the Cillian identity, public-source mirror and private planning/research; its focused PR #30 merged as `e10f9f1` and the 30-file mirror now matches canonical Noo bytes. Castleborn supplies fictional canon; AliaSpaces is the associated persona/social surface, not a runtime dependency. See `docs/PROJECT-STOCKTAKE-2026-10-30.md`.
 
 ## 4. Blockers
 
-Android 0.2.3 installed and hash-verified on Galaxy Note20 Ultra Android 13; older debug app unchanged. Native export/accessibility/long-session and full launcher acceptance remain pending; concurrent phone use invalidated part of the UI sequence. Browser install UI could not be reliably completed amid concurrent computer-use activity; desktop installation is unverified. Historical source mirror remains on separate MyPersonas branches; do not sync from it blindly. Named human review for existing Mission 11 claim and held content, store eligibility and platform release reviews remain open. No store submission or remote sync.
+- Native export/import, process-restart, long-session, complete three-launcher and accessibility acceptance remain pending. Another app is currently the phone's foreground workflow; do not take it over without exclusive device access.
+- Desktop PWA installation remains unverified and is distinct from Android/private-notebook acceptance.
+- Mission 11 reuses Mission 04's image, and the site's existing “human-reviewed” language lacks a located named, signed, hash-bound review record. Owner disposition plus qualified review is required; models cannot self-approve it. Missions 12–15 remain held.
+- HTTP→HTTPS, `www`→apex and then HSTS are account/edge decisions, not repository-only changes.
+- Current store eligibility, privacy/legal/accessibility review, iOS native delivery, remote sync, staffed community, newsletter operations and ingredient commerce remain separate gated tracks.
 
 ## 5. Next actions
 
-Preserve the separate debug app and its notes; no automatic migration has occurred. Coordinate exclusive phone access and complete native export/import/restart and accessibility checks. Finish desktop PWA installation when the UI is available. Reconcile the MyPersonas mirror through a focused change and obtain required content reviews. See docs/RELEASE-2026-10-29.md and docs/DATA-BOUNDARIES.md.
+1. Preserve both Android packages and their separate data stores; with exclusive phone access, complete native export/import/restart, all three launchers and accessibility checks.
+2. Install and verify the public PWA on desktop if the owner wants a desktop shell; do not describe that as installing the private notebook.
+3. After future canonical public changes, update the MyPersonas mirror through another focused exact-parity change; never copy private `outputs/` material into either public repository.
+4. Resolve Mission 11 and name accountable reviewers before any held mission or ingredient/benefit content advances.
+5. Stage edge redirects before considering HSTS; reverify live bytes and headers after each provider change.
+6. Treat store submission, iOS, sync, community, newsletter and commerce as independent releases with their own evidence and approvals.
 
 ## 6. Map
 
-public/: website; mobile/: observation app; docs/: engineering documentation. Private research and owner records are outside the release payload.
+`public/`: production website/PWA payload. `mobile/`: private observation notebook source and Android wrapper. `docs/`: engineering, release and data-boundary records. `deploy/docker/`: optional public-site mirror config, not an installed service. MyPersonas `nooyouniverse.com/`: reconciled public-source mirror, updated only from canonical Noo. MyPersonas `outputs/cillian-noo-youniverse/`: private research/planning, never a runtime or release input.
 
 ## 7. Verification
 
-Run mobile npm test and npm run smoke; source-build Android; inspect package identity, signature, permissions, backup exclusions and assets.
+From `mobile/`: run `npm ci`, `npm test`, `npm run smoke`, `npm run verify-distribution`, `npm audit --audit-level=high`, source-build Android, then inspect identity, signature, permissions, backup exclusions, alignment and 39/39 assets. Run `python mobile/scripts/verify-live.py` for production byte readback. Build, package, publish, install and hands-on acceptance are separate evidence states.
 
 ## 8. Work log
+
+- 2026-10-30 09:15 UTC · Codex GPT-6: completed the fresh cross-chat/repository/live/package/device/data reconciliation. Reverified 29/29 live files, headers, published ZIP/APK hashes/signature and byte-identical installed APK without reading phone data. Fresh source checks: 31/31 tests, smoke, 30-file distribution boundary, audit 0, Android debug/release builds and release lint 0 errors/13 warnings, 39/39 assets. Replaced stale 0.2.2/installation-hold documentation with current 0.2.3 truth; added the project/data stocktake and environment/key ignore patterns; generalized public device/owner metadata. MyPersonas PR #30 merged the exact 30-file public mirror and PR #31 added equivalent environment/signing-file protections; all required checks passed. GitHub description retained and homepage set. No new website payload, APK, health claim, mission, provider row or personal record changed; no store/iOS/sync/community/newsletter/commerce action.
 
 - 2026-10-30 UTC: runtime commit 40b2b8f builds 0.2.3/code 5 with onNewIntent routing. 31 tests and release build/lint pass. Signed and installed APK SHA-256 8a9c7fc1d32ec60771fbfa057ceb6d9bc92e88d2a46b7bb4c1ebb9410d419e27. Release package updated in place; debug version/timestamps unchanged. No notes read, migrated, deleted or included in package. Cold offline site and notebook acknowledgment rendered; complete launcher sequence remains unaccepted amid concurrent phone use.
 

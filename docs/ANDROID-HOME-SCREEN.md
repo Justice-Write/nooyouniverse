@@ -2,13 +2,13 @@
 
 # Android — save the live website as a browser app
 
-This repository cannot push an icon onto the owner's phone. The portfolio-wide
-installation hold is active, so the steps below are a future acceptance
-checklist, not permission to install either the PWA or an APK.
+This repository cannot silently add a Chrome icon to the owner's phone. The
+signed Android 0.2.3 candidate is already installed; the steps below are the
+separate public-site PWA acceptance checklist.
 
 PWA files (`public/manifest.webmanifest`, maskable PNG icons, `public/sw.js`,
 `public/pwa-register.js`) meet Chrome's install fields and were reverified live
-at `https://nooyouniverse.com` on 2026-10-23. This proves the web delivery
+at `https://nooyouniverse.com` on 2026-10-30. This proves the web delivery
 surface, not physical-device installation or acceptance.
 
 ## Live site (Chrome)
@@ -23,7 +23,7 @@ That icon is the **live** website. Waitlist submit works there. It is not the pr
 
 ## Observation log + offline site copy
 
-Those are intended to live in a future corrected release APK
+Those live in the installed 0.2.3 release candidate
 (`docs/DEVICE-INSTALL.md`). The package declares **three** launcher entries;
 their physical-device presentation remains unaccepted:
 
@@ -31,9 +31,8 @@ their physical-device presentation remains unaccepted:
 - **Noo Observation Log** — private notes app
 - **Noo Check Hub** — every page and live Chrome link to look at
 
-Old APK copies may still exist in the owner Drive folder **Noo YouNiverse —
-phone check**. They are superseded and must not be installed. No corrected
-signed APK has been placed there.
+Old APK copies may still exist in owner storage. They are superseded and must
+not replace the installed hash-verified candidate.
 
 Do not confuse the Chrome home-screen icon (live site) with the Android package
 launcher entries (offline site, observation log and hub).
