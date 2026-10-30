@@ -26,7 +26,7 @@ Signposts that point here: `CLAUDE.md` (Claude tools) and the banner at the top 
 
 ## 1. In progress
 
-None. Release work completed; device acceptance remains pending.
+Codex GPT-6: phone appeared during final readback. Inspect exact device/package/certificate, then perform an authorized in-place update only if identities match; preserve existing data. Update release evidence afterward.
 
 ## 2. Project
 
@@ -59,3 +59,5 @@ Run mobile npm test and npm run smoke; source-build Android; inspect package ide
 - 2026-10-29 · Codex GPT-6: integrated verified Android identity/backup/import fixes, public accessibility/disclosures/cache update, 30-file distribution allowlist and two contamination tests. Private research, held mission art, keys and owner data excluded from this clean release history. Final packaging and publication remain in progress.
 
 - 2026-10-29: isolated release worktree created from freshly fetched origin/main. No owner worktree reset or history rewrite.
+
+Phone follow-through: 0.2.2 installed side-by-side with untouched debug app; installed hash verified. Native routing test identified missing onNewIntent handling. Codex is correcting this in 0.2.3/code 5 and rebuilding before final acceptance.
