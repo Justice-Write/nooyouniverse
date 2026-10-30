@@ -83,9 +83,9 @@ test("release signing stages a uniquely named candidate and preserves historical
   ]);
 
   assert.doesNotMatch(script, /dist\\noo-observation-log-0\.2\.1-release\.apk/);
-  assert.match(script, /noo-observation-log-0\.2\.2-corrected-/);
-  assert.match(buildConfig, /versionCode 4/);
-  assert.match(buildConfig, /versionName "0\.2\.2"/);
+  assert.match(script, /noo-observation-log-0\.2\.3-corrected-/);
+  assert.match(buildConfig, /versionCode 5/);
+  assert.match(buildConfig, /versionName "0\.2\.3"/);
   assert.match(script, /dist\\candidates/);
   assert.match(script, /Refusing to overwrite existing signed candidate/);
   assert.match(script, /\[ValidatePattern\('\^\[0-9A-Fa-f\]\{64\}\$'\)\]/);
@@ -99,8 +99,8 @@ test("release signing stages a uniquely named candidate and preserves historical
   assert.match(script, /Assert-CandidateIdentity \$stagedUnsigned 'Staged unsigned input'/);
   assert.match(script, /Assert-CandidateIdentity \$working 'Signed output'/);
   assert.match(script, /\$expectedPackage = 'com\.nooyouniverse\.observationlog'/);
-  assert.match(script, /\$expectedVersionCode = '4'/);
-  assert.match(script, /\$expectedVersionName = '0\.2\.2'/);
+  assert.match(script, /\$expectedVersionCode = '5'/);
+  assert.match(script, /\$expectedVersionName = '0\.2\.3'/);
   assert.match(script, /\$zipalign -c -p 4 \$working/);
   assert.match(script, /--v2-signing-enabled true/);
   assert.match(script, /--v3-signing-enabled true/);

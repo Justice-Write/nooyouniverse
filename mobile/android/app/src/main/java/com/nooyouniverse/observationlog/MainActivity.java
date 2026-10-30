@@ -87,6 +87,17 @@ public class MainActivity extends Activity {
         WindowSafety.apply(this);
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        // Android may deliver a different launcher alias to this existing
+        // activity. Route that request instead of retaining the previous page.
+        if (webView != null) {
+            webView.loadUrl(startUrl());
+        }
+    }
+
     private String startUrl() {
         if (debugCmd != null) {
             return "file:///android_asset/www/index.html";

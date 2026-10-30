@@ -9,8 +9,8 @@ $ErrorActionPreference = 'Stop'
 $mobileRoot = Split-Path $PSScriptRoot -Parent
 $expectedCertificateSha256 = '1241938be1eea287e5797c8671640157082027a391b4dffb1168c7a4ccd0eb0f'
 $expectedPackage = 'com.nooyouniverse.observationlog'
-$expectedVersionCode = '4'
-$expectedVersionName = '0.2.2'
+$expectedVersionCode = '5'
+$expectedVersionName = '0.2.3'
 $buildTools = Join-Path $SdkRoot 'build-tools\36.0.0'
 $aapt2 = Join-Path $buildTools 'aapt2.exe'
 $zipalign = Join-Path $buildTools 'zipalign.exe'
@@ -45,7 +45,7 @@ try {
         throw "Staged unsigned APK SHA-256 does not match the owner-authorized expected hash."
     }
     Assert-CandidateIdentity $stagedUnsigned 'Staged unsigned input'
-    $output = Join-Path $candidateDirectory "noo-observation-log-0.2.2-corrected-$($unsignedHash.Substring(0,12))-signed.apk"
+    $output = Join-Path $candidateDirectory "noo-observation-log-0.2.3-corrected-$($unsignedHash.Substring(0,12))-signed.apk"
     if (Test-Path -LiteralPath $output) {
         throw "Refusing to overwrite existing signed candidate: $output"
     }

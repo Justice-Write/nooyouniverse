@@ -1,0 +1,210 @@
+{
+  "commit": "b26a79f4c049f4d53828f9f4f483304a3c4e8f68",
+  "matched": 29,
+  "total": 29,
+  "files": [
+    {
+      "file": "404.html",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "ac0542f5b25e1666e5a720dfaa653794e6af4789f7f9b4b24f46db78136c9ff4",
+      "actualSha256": "ac0542f5b25e1666e5a720dfaa653794e6af4789f7f9b4b24f46db78136c9ff4"
+    },
+    {
+      "file": "CNAME",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "190c26c9aaf084520c772b88b6cc87fdfa7d0d031486824874b612d23b83a4d0",
+      "actualSha256": "190c26c9aaf084520c772b88b6cc87fdfa7d0d031486824874b612d23b83a4d0"
+    },
+    {
+      "file": "assets/favicon.svg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "7dc8e1c82cdd8c3e2feff656e02e0b13b52a7e4b500ae67b7720544f094910ac",
+      "actualSha256": "7dc8e1c82cdd8c3e2feff656e02e0b13b52a7e4b500ae67b7720544f094910ac"
+    },
+    {
+      "file": "assets/hero.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "ce240b1cf3e3d4d24a1713c2f61b52cfac986017d3f21872893e5b6862ed74a8",
+      "actualSha256": "ce240b1cf3e3d4d24a1713c2f61b52cfac986017d3f21872893e5b6862ed74a8"
+    },
+    {
+      "file": "assets/icon-192.png",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "6fe81e6ab1fab45569f1795cfebb69f24059a9461b9cba5b5a0d7ce8725ece12",
+      "actualSha256": "6fe81e6ab1fab45569f1795cfebb69f24059a9461b9cba5b5a0d7ce8725ece12"
+    },
+    {
+      "file": "assets/icon-512.png",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "9a56b98ee783d1bccb38eec0f2e5abd3771178e9f130c3c5a558680cdc8521ad",
+      "actualSha256": "9a56b98ee783d1bccb38eec0f2e5abd3771178e9f130c3c5a558680cdc8521ad"
+    },
+    {
+      "file": "assets/icon-maskable-192.png",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "a3a86e3edd4caf3bae1aaa671dd7fd49a5941119137b45510463ac4b0b61d31d",
+      "actualSha256": "a3a86e3edd4caf3bae1aaa671dd7fd49a5941119137b45510463ac4b0b61d31d"
+    },
+    {
+      "file": "assets/icon-maskable-512.png",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "3ee90a2b36208719bbf7b0e039ff60da6a8f31688ac8089302f53551b1cedaef",
+      "actualSha256": "3ee90a2b36208719bbf7b0e039ff60da6a8f31688ac8089302f53551b1cedaef"
+    },
+    {
+      "file": "assets/log/01-brand-introduction.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "53138c4ab22d45b87cb0285cff4406fc73a05aa61c983e6426846064d4a3ff22",
+      "actualSha256": "53138c4ab22d45b87cb0285cff4406fc73a05aa61c983e6426846064d4a3ff22"
+    },
+    {
+      "file": "assets/log/02-evidence-ladder.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "03cc5dd09e93e952feaaf14a2850b8220ddf8e613104e46051b9e001a78e924c",
+      "actualSha256": "03cc5dd09e93e952feaaf14a2850b8220ddf8e613104e46051b9e001a78e924c"
+    },
+    {
+      "file": "assets/log/03-one-variable.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "ae13c6a036b613f1bf27457638cdbe69c947ce28c707fea1b162cedd8650c525",
+      "actualSha256": "ae13c6a036b613f1bf27457638cdbe69c947ce28c707fea1b162cedd8650c525"
+    },
+    {
+      "file": "assets/log/04-ships-basics.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "636e92d535531796c9cfe711c602552607d54ae6f6ae51a876824056924f7734",
+      "actualSha256": "636e92d535531796c9cfe711c602552607d54ae6f6ae51a876824056924f7734"
+    },
+    {
+      "file": "assets/log/05-label-not-verdict.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "36b9fd91de78651d7c7a36971f630cd7756ba622157b8022358a3d20ec90d132",
+      "actualSha256": "36b9fd91de78651d7c7a36971f630cd7756ba622157b8022358a3d20ec90d132"
+    },
+    {
+      "file": "assets/log/06-confounders.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "103c0edf6a2175be2e066570ab4e8d7428dd3c738c00979e81d97e72b8eb700e",
+      "actualSha256": "103c0edf6a2175be2e066570ab4e8d7428dd3c738c00979e81d97e72b8eb700e"
+    },
+    {
+      "file": "assets/log/07-null-results.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "a941de2d2d16cb085bd6411933482bb8ed4665882ce1c9eadf3575ab8e8dd84a",
+      "actualSha256": "a941de2d2d16cb085bd6411933482bb8ed4665882ce1c9eadf3575ab8e8dd84a"
+    },
+    {
+      "file": "assets/log/08-clinically-studied.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "8be5d6fc136917029d713b4ac71527dfb7819b7c05b98d27faee8cde52818fdb",
+      "actualSha256": "8be5d6fc136917029d713b4ac71527dfb7819b7c05b98d27faee8cde52818fdb"
+    },
+    {
+      "file": "assets/log/09-tracker-build-diary.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "c7cd9f48aa6bd94b5ceb4c0f51b4e387eacb212295c5433a301633d5a145a42b",
+      "actualSha256": "c7cd9f48aa6bd94b5ceb4c0f51b4e387eacb212295c5433a301633d5a145a42b"
+    },
+    {
+      "file": "assets/log/10-nooyouniverse-charter.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "3fda6a6ab74dd50085236005d596ff8e78f2fd0ebe5b64b8ba88f0c57f561352",
+      "actualSha256": "3fda6a6ab74dd50085236005d596ff8e78f2fd0ebe5b64b8ba88f0c57f561352"
+    },
+    {
+      "file": "assets/log/11-sleep-before-stack.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "636e92d535531796c9cfe711c602552607d54ae6f6ae51a876824056924f7734",
+      "actualSha256": "636e92d535531796c9cfe711c602552607d54ae6f6ae51a876824056924f7734"
+    },
+    {
+      "file": "assets/og.jpg",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "e615aabb86fdd28637959710ab3acda34c60ab2d27265e2826994e99b7525c81",
+      "actualSha256": "e615aabb86fdd28637959710ab3acda34c60ab2d27265e2826994e99b7525c81"
+    },
+    {
+      "file": "corrections.html",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "c95bb48d500b91ddc25f4eb70f5c40d28b2a080e19537f8dac4b5e5986a43b3c",
+      "actualSha256": "c95bb48d500b91ddc25f4eb70f5c40d28b2a080e19537f8dac4b5e5986a43b3c"
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "e00d8df2680fe31990c7ba211b011fdf70deed65606320638282e7ccdc996cef",
+      "actualSha256": "e00d8df2680fe31990c7ba211b011fdf70deed65606320638282e7ccdc996cef"
+    },
+    {
+      "file": "log.html",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "2727ab178ff9db7a96618bacd621a56a8933950e99c77da6d2e79f5c4f3c708b",
+      "actualSha256": "2727ab178ff9db7a96618bacd621a56a8933950e99c77da6d2e79f5c4f3c708b"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "63009f0450475a70a6832712c4c5ad2720c7d1c75197911a52383580d5b23579",
+      "actualSha256": "63009f0450475a70a6832712c4c5ad2720c7d1c75197911a52383580d5b23579"
+    },
+    {
+      "file": "offline.html",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "b103ba8dae774172449f90d0b0b1c89fe20f2de1ef79e49fcb27b818dc444b8d",
+      "actualSha256": "b103ba8dae774172449f90d0b0b1c89fe20f2de1ef79e49fcb27b818dc444b8d"
+    },
+    {
+      "file": "robots.txt",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "6cef62dc8b7ae5b31737a7a3c8ccea66b52677cbe9bbfa2ebed47e2812840c03",
+      "actualSha256": "6cef62dc8b7ae5b31737a7a3c8ccea66b52677cbe9bbfa2ebed47e2812840c03"
+    },
+    {
+      "file": "sitemap.xml",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "e24dd82b185a0e02d397a66078694bcda5657dff01de02d439ed36e8307e846b",
+      "actualSha256": "e24dd82b185a0e02d397a66078694bcda5657dff01de02d439ed36e8307e846b"
+    },
+    {
+      "file": "sources.html",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "66845bcc5db6627bfc8a525ae0ee3777b195136cb27bc1f4de280a0d20ac6b11",
+      "actualSha256": "66845bcc5db6627bfc8a525ae0ee3777b195136cb27bc1f4de280a0d20ac6b11"
+    },
+    {
+      "file": "sw.js",
+      "status": 200,
+      "match": true,
+      "expectedSha256": "69a49819dcd42795a767f1a3ba459576739a95717624337e2a4151c6083431e5",
+      "actualSha256": "69a49819dcd42795a767f1a3ba459576739a95717624337e2a4151c6083431e5"
+    }
+  ]
+}
